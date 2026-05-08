@@ -4,17 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Islamic Homepage — Chrome Extension | Prayer Times, Quran Verses, Cinematic Backgrounds</title>
-
-  <!-- Primary Meta Tags -->
   <meta name="description" content="Islamic Homepage is a serene Chrome extension that displays accurate GPS-based prayer times, daily Quran verses, and cinematic dynamic backgrounds. Free, open-source, privacy-first. Perfect for Muslims seeking a spiritual new tab experience.">
-  <meta name="keywords" content="Islamic Homepage, prayer times, Quran verses, Chrome extension, Islamic new tab,穆斯林 prayer times, Salah, Fajr, Dhuhr, Asr, Maghrib, Isha, Hijri date, Islamic calendar, Muslim productivity">
+  <meta name="keywords" content="Islamic Homepage, prayer times, Quran verses, Chrome extension, Islamic new tab, Salah, Fajr, Dhuhr, Asr, Maghrib, Isha, Hijri date, Islamic calendar, Muslim productivity">
   <meta name="author" content="CORE10">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://core10.site/pages/islamic-homepage/Islamic-Homepage.html">
-
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://core10.site/pages/islamic-homepage/Islamic-Homepage.html">
   <meta property="og:title" content="Islamic Homepage — Chrome Extension | Prayer Times, Quran Verses, Cinematic Backgrounds">
@@ -22,21 +16,13 @@
   <meta property="og:image" content="https://core10.site/pages/islamic-homepage/images/og-islamic-homepage.jpg">
   <meta property="og:site_name" content="Islamic Homepage by CORE10">
   <meta property="og:locale" content="en_US">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://core10.site/pages/islamic-homepage/Islamic-Homepage.html">
   <meta name="twitter:title" content="Islamic Homepage — Chrome Extension | Prayer Times, Quran Verses">
   <meta name="twitter:description" content="A serene Islamic new tab experience with accurate prayer times, daily Quran verses, and cinematic dynamic backgrounds. Free, open-source.">
   <meta name="twitter:image" content="https://core10.site/pages/islamic-homepage/images/twitter-card.jpg">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Structured Data: SoftwareApplication -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Mulish:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,142 +30,140 @@
     "name": "Islamic Homepage",
     "applicationCategory": "BrowserApplication",
     "operatingSystem": "Chrome",
-    "description": "A serene Islamic new tab Chrome extension with accurate GPS-based prayer times, daily Quran verses, and cinematic dynamic backgrounds that transitions through Fajr, Dhuhr, Asr, Maghrib, and Isha.",
+    "description": "A serene Islamic new tab Chrome extension with accurate GPS-based prayer times, daily Quran verses, and cinematic dynamic backgrounds.",
     "url": "https://core10.site/pages/islamic-homepage/Islamic-Homepage.html",
-    "author": {
-      "@type": "Organization",
-      "name": "CORE10",
-      "url": "https://core10.site/"
-    },
+    "author": {"@type": "Organization","name": "CORE10","url": "https://core10.site/"},
     "privacyPolicy": "https://core10.site/pages/islamic-homepage/islamic-homepage-privacy-policy.html",
-    "screenshot": "https://core10.site/pages/islamic-homepage/images/og-islamic-homepage.jpg",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "127"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","ratingCount": "127"},
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
   }
   </script>
-</head>
+<style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#fdf8f4;
-  --bg2:#f5ede3;
-  --white:#ffffff;
-  --ink:#1a0f08;
-  --ink2:#3d2518;
-  --muted:#8a7060;
-  --border:#e8d9cc;
-  --gold:#c8922a;
-  --gold2:#e6b455;
-  --gold-light:#fdf3e3;
-  --gold-glow:rgba(200,146,42,0.18);
-  --rose:#c45b6e;
-  --rose-light:#fceef1;
-  --teal:#3a7d7b;
-  --teal-light:#e8f4f3;
-  --radius:16px;
-  --radius-sm:10px;
+  --night: #060c0a;
+  --deep: #091410;
+  --forest: #0c1f18;
+  --mid: #132b22;
+  --gold: #c8962a;
+  --gold2: #e4b84e;
+  --gold3: #f5d078;
+  --gold-dim: rgba(200,150,42,0.1);
+  --gold-border: rgba(200,150,42,0.22);
+  --gold-glow: rgba(200,150,42,0.07);
+  --cream: #faf5ec;
+  --sand: #f0e6d2;
+  --parchment: #e8d9c0;
+  --ink: #120e08;
+  --ink2: #2a1e10;
+  --muted: #6b5c44;
+  --white: #fff;
+  --teal: #2e6e6b;
+  --teal2: #3d9490;
+  --rose: #b04f64;
+  --r: 14px;
+  --r2: 22px;
+  --r3: 32px;
 }
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gold) var(--forest)}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Mulish',sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+::selection{background:rgba(200,150,42,0.22);color:#000}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--forest)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
 
-/* ─── ANNOUNCEMENT BANNER ─── */
-.announce-bar{
+/* ─── GEOMETRIC SVG PATTERN ─── */
+.geo-pat{
+  position:absolute;inset:0;pointer-events:none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='rgba(200,150,42,0.18)' stroke-width='0.5'%3E%3Cpolygon points='40,4 76,22 76,58 40,76 4,58 4,22'/%3E%3Cpolygon points='40,16 64,28 64,52 40,64 16,52 16,28'/%3E%3Cline x1='40' y1='4' x2='40' y2='16'/%3E%3Cline x1='76' y1='22' x2='64' y2='28'/%3E%3Cline x1='76' y1='58' x2='64' y2='52'/%3E%3Cline x1='40' y1='76' x2='40' y2='64'/%3E%3Cline x1='4' y1='58' x2='16' y2='52'/%3E%3Cline x1='4' y1='22' x2='16' y2='28'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:80px 80px;
+  opacity:0.35;
+}
+.geo-pat-faint{
+  position:absolute;inset:0;pointer-events:none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='rgba(200,150,42,0.08)' stroke-width='0.4'%3E%3Cpolygon points='40,4 76,22 76,58 40,76 4,58 4,22'/%3E%3Cpolygon points='40,16 64,28 64,52 40,64 16,52 16,28'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:80px 80px;
+}
+
+/* ─── ANNOUNCE BAR ─── */
+.ann-bar{
   position:relative;z-index:1000;
-  background:linear-gradient(135deg,#1a3a35 0%,#0d2420 50%,#1a2d3a 100%);
+  background:linear-gradient(90deg, #0a1f18 0%, #0d2a1e 50%, #0a1a14 100%);
   color:#fff;
-  display:flex;align-items:center;justify-content:center;gap:16px;
-  padding:11px 48px 11px 24px;
-  font-size:13px;font-weight:500;
-  letter-spacing:0.02em;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:10px 48px 10px 24px;
+  font-size:12.5px;font-weight:500;letter-spacing:0.02em;
+  border-bottom:1px solid rgba(200,150,42,0.15);
 }
-.announce-bar .ann-icon{
-  font-size:16px;animation:moonFloat 3s ease-in-out infinite;
+.ann-moon{font-size:15px;animation:mf 3s ease-in-out infinite}
+@keyframes mf{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(8deg)}}
+.ann-pill{
+  background:rgba(200,150,42,0.18);border:1px solid rgba(200,150,42,0.35);
+  border-radius:100px;padding:2px 10px;font-size:10.5px;font-weight:700;
+  color:var(--gold2);letter-spacing:0.08em;text-transform:uppercase;flex-shrink:0;
 }
-@keyframes moonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-.ann-badge{
-  background:rgba(200,146,42,0.25);border:1px solid rgba(200,146,42,0.4);
-  border-radius:100px;padding:2px 10px;font-size:11px;font-weight:700;
-  color:var(--gold2);letter-spacing:0.06em;text-transform:uppercase;
-  flex-shrink:0;
+.ann-txt{color:rgba(255,255,255,0.82)}
+.ann-txt strong{color:#fff}
+.ann-close{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;
+  width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  transition:all .2s;font-size:15px;
 }
-.ann-text{color:rgba(255,255,255,0.9)}
-.ann-text strong{color:#fff}
-.announce-close{
-  position:absolute;right:16px;top:50%;transform:translateY(-50%);
-  background:none;border:none;color:rgba(255,255,255,0.5);
-  cursor:pointer;width:28px;height:28px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .2s;font-size:16px;line-height:1;
-}
-.announce-close:hover{background:rgba(255,255,255,0.1);color:#fff}
+.ann-close:hover{background:rgba(255,255,255,0.1);color:#fff}
 
 /* ─── NAV ─── */
 nav{
-  position:fixed;top:60px;left:50%;transform:translateX(-50%);
+  position:fixed;top:calc(40px + 16px);left:50%;transform:translateX(-50%);
   z-index:900;
-  display:flex;align-items:center;justify-content:space-between;gap:40px;
-  background:rgba(255,255,255,0.92);
-  backdrop-filter:blur(24px);
-  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:32px;
+  background:rgba(9,20,16,0.82);
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  border:1px solid rgba(200,150,42,0.18);
   border-radius:100px;
-  padding:10px 10px 10px 24px;
-  width:min(960px,calc(100vw - 32px));
-  box-shadow:0 2px 32px rgba(200,146,42,0.1),0 1px 0 rgba(255,255,255,0.9) inset;
-  transition:top .3s ease;
+  padding:8px 8px 8px 22px;
+  width:min(980px,calc(100vw - 32px));
+  box-shadow:0 2px 40px rgba(0,0,0,0.35),0 0 0 1px rgba(200,150,42,0.05) inset;
+  transition:top .3s ease,background .3s;
 }
 nav.bar-hidden{top:16px}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}
 .nav-logo-icon{
-  width:32px;height:32px;border-radius:10px;
-  background:linear-gradient(135deg,#1a3a35,#0d2420);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;flex-shrink:0;
+  width:30px;height:30px;border-radius:9px;
+  background:linear-gradient(135deg,var(--gold),#8a5e10);
+  display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;
 }
-.nav-logo-text{font-family:'Syne',sans-serif;font-size:13.5px;font-weight:700;color:var(--ink);letter-spacing:-0.01em}
-.nav-logo-text span{color:var(--gold)}
-.nav-links{display:flex;gap:4px;align-items:center;flex:1;justify-content:center}
+.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:0.01em}
+.nav-logo-text span{color:var(--gold2)}
+.nav-links{display:flex;gap:2px;align-items:center;flex:1;justify-content:center}
 .nav-links a{
-  font-size:14px;font-weight:500;color:var(--ink2);
+  font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.6);
   text-decoration:none;padding:7px 14px;border-radius:100px;
-  transition:background .15s,color .15s;
+  transition:background .15s,color .15s;letter-spacing:0.01em;
 }
-.nav-links a:hover{background:var(--bg2);color:var(--ink)}
+.nav-links a:hover{background:rgba(255,255,255,0.07);color:#fff}
 .nav-cta{
-  display:inline-flex;align-items:center;gap:8px;
-  background:linear-gradient(135deg,#1a3a35,#0d2d28);
-  color:#fff;
-  font-size:13.5px;font-weight:500;
-  padding:10px 18px;border-radius:100px;
-  text-decoration:none;transition:all .2s;
-  white-space:nowrap;
+  display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(135deg,var(--gold),#8a5e10);
+  color:#fff;font-size:13px;font-weight:600;
+  padding:10px 20px;border-radius:100px;
+  text-decoration:none;transition:all .2s;white-space:nowrap;
+  letter-spacing:0.02em;
+  box-shadow:0 2px 16px rgba(200,150,42,0.28);
 }
-.nav-cta:hover{transform:scale(1.02);box-shadow:0 4px 20px rgba(26,58,53,0.3)}
-.nav-cta-arrow{
-  width:22px;height:22px;border-radius:50%;
-  background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
- .nav-cta-arrow svg{width:11px;height:11px;color:#fff}
+.nav-cta:hover{transform:scale(1.03);box-shadow:0 4px 24px rgba(200,150,42,0.45)}
+.nav-cta svg{width:12px;height:12px;color:#fff}
 
-/* Hamburger base — hidden on desktop */
-.hamburger{
-  display:none;
-  flex-direction:column;gap:5px;
-  background:none;border:none;
-  padding:8px;cursor:pointer;
-  z-index:1001;
-}
-.hamburger span{
-  display:block;width:22px;height:2px;
-  background:var(--ink);border-radius:2px;
-  transition:all .3s;
-}
+/* hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;cursor:pointer;z-index:1001}
+.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.7);border-radius:2px;transition:all .3s}
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
@@ -187,915 +171,743 @@ nav.bar-hidden{top:16px}
 /* ─── HERO ─── */
 .hero{
   min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:140px 24px 100px;text-align:center;position:relative;overflow:hidden;
+  padding:160px 24px 100px;text-align:center;position:relative;overflow:hidden;
 }
-/* Starry gradient background */
 .hero-bg{
   position:absolute;inset:0;
-  background:linear-gradient(170deg, #0d1f1c 0%, #112824 25%, #1a3530 50%, #1f2d1a 75%, #0d1a10 100%);
+  background:radial-gradient(ellipse 120% 80% at 50% 0%, #0f2a1f 0%, #060c0a 55%, #030807 100%);
 }
-/* Subtle geometric Islamic pattern overlay */
-.hero-pattern{
-  position:absolute;inset:0;
-  opacity:0.04;
-  background-image:
-    repeating-linear-gradient(60deg, rgba(200,146,42,1) 0, rgba(200,146,42,1) 1px, transparent 0, transparent 50%),
-    repeating-linear-gradient(-60deg, rgba(200,146,42,1) 0, rgba(200,146,42,1) 1px, transparent 0, transparent 50%);
-  background-size:40px 40px;
-}
-/* Gold radial glow */
-.hero-glow1{
-  position:absolute;top:-100px;left:50%;transform:translateX(-50%);
-  width:800px;height:500px;
-  background:radial-gradient(ellipse, rgba(200,146,42,0.15) 0%, transparent 65%);
+.hero-geo{position:absolute;inset:0;opacity:0.5}
+.hero-geo svg{width:100%;height:100%;position:absolute;inset:0}
+.hero-glow{
+  position:absolute;top:-60px;left:50%;transform:translateX(-50%);
+  width:900px;height:420px;
+  background:radial-gradient(ellipse,rgba(200,150,42,0.12) 0%,transparent 65%);
   pointer-events:none;
 }
 .hero-glow2{
-  position:absolute;bottom:-50px;right:-100px;
-  width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle, rgba(196,91,110,0.1) 0%, transparent 65%);
-  pointer-events:none;
+  position:absolute;bottom:-80px;right:-80px;width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(46,110,107,0.12) 0%,transparent 65%);pointer-events:none;
 }
-/* Stars */
-.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--dur,3s) ease-in-out infinite}
-@keyframes twinkle{0%,100%{opacity:var(--op,0.4)}50%{opacity:0.1}}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twk var(--dur,3s) ease-in-out infinite}
+@keyframes twk{0%,100%{opacity:var(--op,.4)}50%{opacity:0.08}}
 
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(200,146,42,0.15);border:1px solid rgba(200,146,42,0.3);
-  border-radius:100px;padding:6px 16px 6px 10px;
-  font-size:12.5px;font-weight:500;color:rgba(255,255,255,0.85);
-  margin-bottom:32px;
+/* hero content */
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;
+  background:rgba(200,150,42,0.1);border:1px solid rgba(200,150,42,0.25);
+  border-radius:100px;padding:5px 16px 5px 8px;
+  font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.7);
+  letter-spacing:0.06em;text-transform:uppercase;
   position:relative;z-index:2;
 }
-.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold2);flex-shrink:0;box-shadow:0 0 0 3px rgba(230,180,85,0.3);animation:pulse 2.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(230,180,85,0.4)}50%{box-shadow:0 0 0 5px rgba(230,180,85,0)}}
-
-.hero-title{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(44px,6vw,86px);
-  font-weight:800;line-height:1.0;letter-spacing:-0.04em;
-  max-width:860px;margin:0 auto 24px;
-  position:relative;z-index:2;
-  color:#fff;
-}
-.hero-title .hl-gold{
-  color:var(--gold2);
-}
-.hero-title .hl-stroke{
-  display:inline-block;
-  color:transparent;
-  -webkit-text-stroke:1.5px rgba(200,146,42,0.7);
-  font-style:italic;font-weight:300;
-}
+.ey-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);flex-shrink:0;animation:pu 2.5s ease-in-out infinite}
+@keyframes pu{0%,100%{box-shadow:0 0 0 0 rgba(228,184,78,0.5)}50%{box-shadow:0 0 0 6px rgba(228,184,78,0)}}
 
 .hero-arabic{
-  font-size:clamp(18px,2.5vw,28px);
-  color:rgba(200,146,42,0.8);
-  letter-spacing:0.05em;
-  font-weight:300;
-  margin-bottom:8px;
-  position:relative;z-index:2;
+  font-family:'Noto Naskh Arabic',serif;
+  font-size:clamp(16px,2.2vw,24px);
+  color:rgba(200,150,42,0.75);letter-spacing:0.05em;font-weight:400;
+  margin-bottom:18px;position:relative;z-index:2;
 }
-
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,7.5vw,108px);
+  font-weight:600;line-height:0.92;letter-spacing:-0.03em;
+  max-width:920px;margin:0 auto 22px;
+  position:relative;z-index:2;color:#fff;
+}
+.hero-title .hl{color:var(--gold2)}
+.hero-title .hl-i{font-style:italic;font-weight:300;color:rgba(228,184,78,0.7)}
+.hero-title .hl-stroke{
+  color:transparent;-webkit-text-stroke:1px rgba(200,150,42,0.6);
+  font-style:italic;font-weight:300;
+}
 .hero-sub{
-  font-size:17px;line-height:1.7;color:rgba(255,255,255,0.55);
-  max-width:500px;margin:0 auto 44px;font-weight:400;
+  font-size:16px;line-height:1.75;color:rgba(255,255,255,0.45);
+  max-width:480px;margin:0 auto 46px;font-weight:400;
   position:relative;z-index:2;
 }
-.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:72px;position:relative;z-index:2}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:72px;position:relative;z-index:2}
 
 .btn-gold{
   display:inline-flex;align-items:center;gap:10px;
-  background:linear-gradient(135deg,var(--gold),#a87220);
-  color:#fff;
-  font-size:14.5px;font-weight:600;
-  padding:15px 26px;border-radius:100px;
+  background:linear-gradient(135deg,var(--gold),#8a5e10);
+  color:#fff;font-size:14px;font-weight:600;letter-spacing:0.02em;
+  padding:14px 28px;border-radius:100px;
   text-decoration:none;transition:all .25s;
-  box-shadow:0 4px 24px rgba(200,146,42,0.35);
+  box-shadow:0 4px 28px rgba(200,150,42,0.35);
 }
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 8px 36px rgba(200,146,42,0.5)}
-.btn-gold .arr-wrap{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center}
-.btn-gold .arr-wrap svg{width:12px;height:12px;color:#fff;transition:transform .2s}
-.btn-gold:hover .arr-wrap svg{transform:translateX(2px)}
-
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(200,150,42,0.5)}
+.btn-gold-arr{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center}
 .btn-ghost{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);
+  background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.72);
   font-size:14px;font-weight:500;
-  padding:15px 26px;border-radius:100px;
-  text-decoration:none;border:1px solid rgba(255,255,255,0.15);
+  padding:14px 28px;border-radius:100px;
+  text-decoration:none;border:1px solid rgba(255,255,255,0.12);
   transition:all .2s;
 }
-.btn-ghost:hover{border-color:rgba(255,255,255,0.35);color:#fff;background:rgba(255,255,255,0.12)}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.3);color:#fff;background:rgba(255,255,255,0.09)}
 
-/* HERO STATS */
-.hero-stats-row{
-  display:flex;gap:0;
-  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
-  border-radius:var(--radius);
-  overflow:hidden;
-  width:fit-content;margin:0 auto;
-  position:relative;z-index:2;
-  backdrop-filter:blur(12px);
+/* hero stats */
+.hero-stats{
+  display:flex;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--r2);overflow:hidden;width:fit-content;margin:0 auto;
+  position:relative;z-index:2;backdrop-filter:blur(12px);
 }
-.hstat{
-  padding:20px 40px;text-align:center;
-  border-right:1px solid rgba(255,255,255,0.08);
-}
-.hstat:last-child{border-right:none}
-.hstat-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#fff}
-.hstat-num span{color:var(--gold2)}
-.hstat-label{font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;font-weight:400}
+.hst{padding:20px 44px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}
+.hst:last-child{border-right:none}
+.hst-n{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;letter-spacing:-0.03em;line-height:1;color:#fff}
+.hst-n em{color:var(--gold2);font-style:normal}
+.hst-l{font-size:11px;color:rgba(255,255,255,0.35);margin-top:5px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase}
 
-/* ─── VIDEO SECTION ─── */
-.video-section{
-  padding:120px 0;
-  background:var(--bg);
-  position:relative;overflow:hidden;
+/* ─── MARQUEE ─── */
+.marquee-wrap{
+  border-top:1px solid var(--parchment);border-bottom:1px solid var(--parchment);
+  overflow:hidden;background:var(--white);
 }
-.video-section::before{
+.marquee-track{display:flex;gap:0;animation:marquee 26s linear infinite;width:max-content}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mi{
+  display:flex;align-items:center;gap:12px;padding:13px 36px;
+  font-size:12px;font-weight:600;color:var(--muted);white-space:nowrap;
+  letter-spacing:0.07em;text-transform:uppercase;
+  border-right:1px solid var(--parchment);
+}
+
+/* ─── SECTION COMMONS ─── */
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.stag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:11px;font-weight:700;color:var(--muted);
+  letter-spacing:0.1em;text-transform:uppercase;
+  background:var(--sand);border:1px solid var(--parchment);
+  padding:5px 12px;border-radius:100px;margin-bottom:18px;
+}
+.stag-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.stit{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(34px,4.5vw,60px);
+  font-weight:600;line-height:1.04;letter-spacing:-0.025em;
+  margin-bottom:14px;color:var(--ink);
+}
+.stit em{font-style:italic;font-weight:400;color:var(--gold)}
+.ssub{font-size:15.5px;color:var(--muted);line-height:1.75;max-width:480px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ─── VIDEO ─── */
+.vid-sec{
+  padding:120px 0;background:var(--cream);position:relative;overflow:hidden;
+}
+.vid-sec::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,var(--gold),transparent);
 }
-.section-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-.section-tag{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;font-weight:600;color:var(--ink2);
-  letter-spacing:0.08em;text-transform:uppercase;
-  background:var(--gold-light);border:1px solid rgba(200,146,42,0.2);
-  padding:5px 12px;border-radius:100px;margin-bottom:20px;
+.vid-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:32px;flex-wrap:wrap}
+.vid-frame{
+  width:100%;margin:0 auto;
+  border-radius:var(--r3);overflow:hidden;
+  border:1px solid var(--parchment);
+  box-shadow:0 32px 96px rgba(0,0,0,0.14),0 4px 16px rgba(0,0,0,0.06);
+  background:var(--forest);
 }
-.section-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
-.section-title{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(30px,4vw,52px);
-  font-weight:800;line-height:1.08;letter-spacing:-0.03em;
-  margin-bottom:16px;color:var(--ink);
-}
-.section-title em{font-style:italic;font-weight:300;color:var(--gold)}
-.section-sub{font-size:16px;color:var(--muted);line-height:1.7;max-width:500px}
-
-.video-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:32px;flex-wrap:wrap}
-
-.video-frame{
-  width:100%;max-width:900px;margin:0 auto;
-  aspect-ratio:16/9;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid var(--border);
-  box-shadow:0 24px 80px rgba(26,58,53,0.15),0 4px 16px rgba(0,0,0,0.08);
-  position:relative;
-  background:linear-gradient(135deg,#0d1f1c,#1a3530);
-  display:flex;align-items:center;justify-content:center;
-}
-.video-placeholder{
-  position:absolute;inset:0;
-  background:linear-gradient(160deg,#0d1f1c 0%,#1a3530 50%,#0d2420 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
-}
-.video-play-ring{
-  width:84px;height:84px;border-radius:50%;
-  background:rgba(200,146,42,0.15);border:2px solid rgba(200,146,42,0.4);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;transition:all .3s;
-  animation:ringPulse 2.5s ease-in-out infinite;
-}
-@keyframes ringPulse{0%,100%{box-shadow:0 0 0 0 rgba(200,146,42,0.3)}50%{box-shadow:0 0 0 16px rgba(200,146,42,0)}}
-.video-play-ring:hover{background:rgba(200,146,42,0.25);transform:scale(1.08)}
-.video-play-ring svg{width:32px;height:32px;fill:var(--gold2);margin-left:4px}
-.video-placeholder-text{
-  font-family:'Syne',sans-serif;
-  font-size:17px;font-weight:600;color:rgba(255,255,255,0.7);
-  letter-spacing:-0.01em;
-}
-.video-placeholder-sub{
-  font-size:13px;color:rgba(255,255,255,0.3);
-  font-weight:400;
-}
-/* If user pastes a YouTube embed */
-.video-frame iframe{
-  width:100%;border:0;
-}
-.video-note{
-  text-align:center;margin-top:20px;
-  font-size:13px;color:var(--muted);
-}
-.video-note strong{color:var(--ink2)}
-
-/* ─── VIDEO PLAYER ═══ */
-.video-player-wrapper{max-width:1000px;margin:0 auto}
-.video-player{
-  position:relative;
-  width:100%;
-  border-radius:24px;
-  overflow:hidden;
-  border:2px solid var(--border);
-  box-shadow:0 32px 100px rgba(26,58,53,0.25),0 8px 24px rgba(0,0,0,0.12);
-  background:linear-gradient(135deg,#0d1f1c,#1a3530);
-}
-.video-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(13,31,28,0) 0%,rgba(13,31,28,0.4) 100%);
-  display:flex;align-items:center;justify-content:center;
-  pointer-events:none;
-}
-.play-indicator{
-  width:80px;height:80px;border-radius:50%;
-  background:rgba(200,146,42,0.9);border:4px solid rgba(255,255,255,0.3);
-  display:flex;align-items:center;justify-content:center;
-  font-size:32px;color:#fff;
-  opacity:0;transition:opacity .3s;
-  box-shadow:0 8px 40px rgba(200,146,42,0.5);
-}
-.video-player:hover .play-indicator{opacity:1}
-.video-caption{
-  text-align:center;margin-top:20px;
-  font-size:14px;color:var(--muted);
-  font-weight:500;letter-spacing:0.02em;
-}
+.vid-frame video{width:100%;object-fit:cover;border-radius:var(--r3)}
+.vid-caption{text-align:center;margin-top:18px;font-size:12px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
 
 /* ─── FEATURES ─── */
-.features{padding:100px 0;background:var(--white);border-top:1px solid var(--border)}
-.features-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:32px;flex-wrap:wrap}
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-
-.feat-card{
-  background:var(--bg);border:1px solid var(--border);
-  border-radius:var(--radius);padding:32px;
-  position:relative;overflow:hidden;
-  transition:transform .25s,box-shadow .25s,border-color .25s;
+.feat-sec{padding:100px 0;background:var(--white)}
+.feat-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;gap:32px;flex-wrap:wrap}
+.feat-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+  background:var(--parchment);border-radius:var(--r2);overflow:hidden;
+  border:1px solid var(--parchment);
 }
-.feat-card::before{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+.fc{
+  background:var(--white);padding:36px;position:relative;
+  transition:background .2s;
+}
+.fc:hover{background:var(--cream)}
+.fc-dark{background:var(--night);color:#fff}
+.fc-dark:hover{background:#0a1610}
+.fc-icon{font-size:28px;margin-bottom:16px;display:block}
+.fc-n{
+  font-size:10px;font-weight:700;color:var(--muted);letter-spacing:0.15em;
+  text-transform:uppercase;margin-bottom:10px;
+  font-family:'Mulish',sans-serif;
+}
+.fc-dark .fc-n{color:rgba(255,255,255,0.3)}
+.fc-h{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;letter-spacing:-0.015em;margin-bottom:10px;line-height:1.15}
+.fc-dark .fc-h{color:#fff}
+.fc-p{font-size:13.5px;color:var(--muted);line-height:1.75}
+.fc-dark .fc-p{color:rgba(255,255,255,0.42)}
+.fc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.fc-tag{
+  font-size:10.5px;font-weight:700;letter-spacing:0.06em;
+  padding:3px 10px;border-radius:100px;
+  background:var(--sand);color:var(--muted);border:1px solid var(--parchment);
+}
+.fc-dark .fc-tag{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.45)}
+.fc-bar{
+  position:absolute;bottom:0;left:0;right:0;height:2px;
   background:linear-gradient(90deg,var(--gold),var(--gold2));
-  opacity:0;transition:opacity .25s;
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
 }
-.feat-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(200,146,42,0.12);border-color:#d8c5aa}
-.feat-card:hover::before{opacity:1}
-.feat-card.dark-card{
-  background:linear-gradient(135deg,#0d1f1c,#1a3530);
-  border-color:#1a3530;color:#fff;
-}
-.feat-card.dark-card::before{opacity:1;height:100%;background:linear-gradient(135deg,rgba(200,146,42,0.1) 0%,transparent 60%)}
-.feat-icon{
-  width:48px;height:48px;border-radius:14px;
-  background:var(--white);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:20px;font-size:22px;
-}
-.dark-card .feat-icon{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.12)}
-.feat-num{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px}
-.dark-card .feat-num{color:rgba(255,255,255,0.35)}
-.feat-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px}
-.dark-card .feat-name{color:#fff}
-.feat-desc{font-size:13.5px;color:var(--muted);line-height:1.7}
-.dark-card .feat-desc{color:rgba(255,255,255,0.5)}
-.feat-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
-.feat-tag{
-  font-size:11px;font-weight:600;color:var(--gold);
-  background:var(--gold-light);padding:4px 10px;border-radius:100px;
-  border:1px solid rgba(200,146,42,0.2);
-}
-.dark-card .feat-tag{background:rgba(200,146,42,0.15);border-color:rgba(200,146,42,0.3);color:var(--gold2)}
+.fc:hover .fc-bar{transform:scaleX(1)}
 
-/* ─── SCREENSHOTS / SHOWCASE ─── */
+/* ─── SHOWCASE ─── */
 .showcase{
   padding:100px 0;
-  background:linear-gradient(170deg,#fdf8f4 0%,#f5ede3 60%,#ede3d6 100%);
-  border-top:1px solid var(--border);
+  background:linear-gradient(170deg,var(--forest) 0%,var(--night) 100%);
   position:relative;overflow:hidden;
 }
-.showcase::before{
-  content:'';position:absolute;right:-200px;top:50%;transform:translateY(-50%);
-  width:500px;height:500px;border-radius:50%;
-  background:radial-gradient(circle,rgba(200,146,42,0.08) 0%,transparent 65%);
-  pointer-events:none;
+.showcase-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.sh-left .stag{background:rgba(200,150,42,0.12);border-color:rgba(200,150,42,0.2);color:rgba(255,255,255,0.5)}
+.sh-left .stag-dot{background:var(--gold2)}
+.sh-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,4vw,56px);font-weight:600;line-height:1;letter-spacing:-0.025em;
+  color:#fff;margin-bottom:18px;
 }
-.showcase-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.showcase-left{}
-.showcase-title{
-  font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,46px);
-  font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:24px;
-}
-.showcase-title .hl-gold{color:var(--gold)}
-.showcase-lead{font-size:16px;line-height:1.75;color:var(--ink2);margin-bottom:32px;max-width:420px}
-.showcase-divider{width:48px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));margin-bottom:32px}
-.showcase-list{display:flex;flex-direction:column;gap:16px}
-.sh-item{
-  display:flex;gap:16px;align-items:flex-start;
-  padding:20px 24px;background:var(--white);
-  border:1px solid var(--border);border-radius:var(--radius);
-  transition:all .2s;
-}
-.sh-item:hover{border-color:#d8c5aa;box-shadow:0 4px 20px rgba(200,146,42,0.08);transform:translateX(4px)}
+.sh-title .hl{color:var(--gold2)}
+.sh-divider{width:48px;height:1px;background:var(--gold-border);margin:24px 0}
+.sh-lead{font-size:15px;color:rgba(255,255,255,0.45);line-height:1.75;margin-bottom:36px}
+.sh-list{display:flex;flex-direction:column;gap:20px}
+.sh-item{display:flex;gap:18px;align-items:flex-start}
 .sh-num{
-  font-family:'Syne',sans-serif;font-size:18px;font-weight:800;
-  color:var(--gold);letter-spacing:-0.02em;flex-shrink:0;line-height:1.3;
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  background:rgba(200,150,42,0.1);border:1px solid rgba(200,150,42,0.2);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
 }
-.sh-text h4{font-size:14px;font-weight:600;margin-bottom:4px}
-.sh-text p{font-size:13px;color:var(--muted);line-height:1.6}
+.sh-txt h4{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:3px}
+.sh-txt p{font-size:13px;color:rgba(255,255,255,0.38);line-height:1.65}
+.sh-right{display:grid;grid-template-columns:1fr;gap:12px}
+.sh-img-row{
+  border-radius:var(--r2);overflow:hidden;
+  border:1px solid rgba(200,150,42,0.12);
+  box-shadow:0 8px 40px rgba(0,0,0,0.45);
+  transition:all .3s;
+}
+.sh-img-row:hover{transform:translateY(-4px);box-shadow:0 16px 60px rgba(0,0,0,0.55)}
+.sh-img-row img{width:100%;height:auto;display:block;background:var(--forest)}
 
-/* Screenshot placeholders */
-.showcase-right{display:flex;flex-direction:column;gap:12px}
-.showcase-row{
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid var(--border);
-  box-shadow:0 8px 32px rgba(26,58,53,0.15);
-  transition:transform .3s,box-shadow .3s;
-  background:#0d1f1c;
-}
-.showcase-row:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(26,58,53,0.22)}
-.showcase-img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  object-position:center;
-  background:#0d1f1c;
-}
-
-/* ─── PRIVACY / ABOUT STRIP ─── */
-.about-strip{
-  padding:80px 0;
-  background:linear-gradient(135deg,#0d1f1c 0%,#1a3530 50%,#0d2420 100%);
+/* ─── PRIVACY STRIP ─── */
+.priv-strip{
+  padding:90px 0;
+  background:linear-gradient(135deg,#0a1e16 0%,#0d2a1e 50%,#091610 100%);
   text-align:center;position:relative;overflow:hidden;
 }
-.about-strip::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 700px 400px at 50% 50%, rgba(200,146,42,0.12) 0%, transparent 65%),
-    repeating-conic-gradient(from 0deg at 50% 50%, rgba(200,146,42,0.03) 0deg 6deg, transparent 6deg 12deg);
-  pointer-events:none;
+.priv-strip .geo-pat{opacity:0.25}
+.priv-inner{max-width:660px;margin:0 auto;position:relative;z-index:2;padding:0 24px}
+.priv-badge{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;
+  background:rgba(200,150,42,0.1);border:1px solid rgba(200,150,42,0.2);
+  border-radius:100px;padding:5px 16px 5px 9px;
+  font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.55);
+  letter-spacing:0.06em;text-transform:uppercase;
 }
-.about-inner{max-width:680px;margin:0 auto;position:relative;z-index:2;padding:0 24px}
-.about-badge{
+.priv-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,5vw,68px);font-weight:600;line-height:0.98;letter-spacing:-0.03em;
+  color:#fff;margin-bottom:18px;
+}
+.priv-title em{font-style:italic;font-weight:300;color:var(--gold2)}
+.priv-sub{font-size:15px;color:rgba(255,255,255,0.38);line-height:1.75;margin-bottom:44px}
+.priv-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-g{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(200,146,42,0.15);border:1px solid rgba(200,146,42,0.25);
-  border-radius:100px;padding:6px 14px 6px 8px;
-  font-size:12.5px;font-weight:500;color:rgba(255,255,255,0.65);
-  margin-bottom:28px;
-}
-.about-title{
-  font-family:'Syne',sans-serif;font-size:clamp(32px,4.5vw,56px);
-  font-weight:800;line-height:1.04;letter-spacing:-0.035em;
-  color:#fff;margin-bottom:20px;
-}
-.about-title em{font-style:italic;font-weight:300;color:var(--gold2)}
-.about-sub{font-size:15px;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:40px}
-.about-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-accent{
-  display:inline-flex;align-items:center;gap:8px;
-  background:linear-gradient(135deg,var(--gold),#a87220);
-  color:#fff;font-size:14px;font-weight:600;
-  padding:13px 24px;border-radius:100px;
+  background:linear-gradient(135deg,var(--gold),#8a5e10);
+  color:#fff;font-size:13.5px;font-weight:600;
+  padding:13px 26px;border-radius:100px;
   text-decoration:none;transition:all .2s;
-  box-shadow:0 4px 20px rgba(200,146,42,0.35);
+  box-shadow:0 4px 20px rgba(200,150,42,0.3);
 }
-.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,146,42,0.5)}
-.btn-outline-w{
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,150,42,0.5)}
+.btn-ow{
   display:inline-flex;align-items:center;gap:8px;
-  background:transparent;color:rgba(255,255,255,0.7);
-  font-size:14px;font-weight:500;
-  padding:13px 24px;border-radius:100px;
-  text-decoration:none;border:1px solid rgba(255,255,255,0.15);
-  transition:all .2s;
+  background:transparent;color:rgba(255,255,255,0.6);
+  font-size:13.5px;font-weight:500;padding:13px 26px;border-radius:100px;
+  text-decoration:none;border:1px solid rgba(255,255,255,0.12);transition:all .2s;
 }
-.btn-outline-w:hover{border-color:rgba(255,255,255,0.35);color:#fff}
+.btn-ow:hover{border-color:rgba(255,255,255,0.3);color:#fff}
 
-/* ─── PRAYER TIMES DEMO ─── */
-.prayer-section{padding:100px 0;background:var(--bg)}
+/* ─── PRAYER TIMES ─── */
+.prayer-sec{padding:100px 0;background:var(--cream)}
 .prayer-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:52px}
-.prayer-card{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:var(--radius);padding:32px;
+.pc{
+  background:var(--white);border:1px solid var(--parchment);
+  border-radius:var(--r2);padding:36px;
   transition:all .25s;position:relative;overflow:hidden;
 }
-.prayer-card::after{
-  content:'';position:absolute;top:0;left:0;width:3px;height:0;
-  background:linear-gradient(180deg,var(--gold),var(--gold2));
-  transition:height .3s ease;
+.pc::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s;
 }
-.prayer-card:hover::after{height:100%}
-.prayer-card:hover{border-color:#d8c5aa;transform:translateY(-3px);box-shadow:0 8px 32px rgba(200,146,42,0.1)}
-.prayer-time{
-  font-family:'Syne',sans-serif;font-size:48px;font-weight:800;
-  color:var(--bg2);letter-spacing:-0.04em;line-height:1;margin-bottom:16px;
+.pc:hover::before{transform:scaleX(1)}
+.pc:hover{border-color:#d8c5aa;transform:translateY(-4px);box-shadow:0 12px 40px rgba(200,150,42,0.08)}
+.pc-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:72px;font-weight:300;
+  color:var(--parchment);letter-spacing:-0.06em;line-height:1;margin-bottom:18px;
 }
-.prayer-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px}
-.prayer-desc{font-size:13.5px;color:var(--muted);line-height:1.7}
-.prayer-pill{
-  display:inline-flex;align-items:center;gap:5px;margin-top:16px;
-  font-size:11.5px;font-weight:600;color:var(--gold);
-  background:var(--gold-light);padding:4px 10px;border-radius:100px;
-  border:1px solid rgba(200,146,42,0.2);
+.pc-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:8px;color:var(--ink)}
+.pc-desc{font-size:13.5px;color:var(--muted);line-height:1.72}
+.pc-pill{
+  display:inline-flex;align-items:center;gap:5px;margin-top:18px;
+  font-size:11px;font-weight:700;color:var(--gold);
+  background:rgba(200,150,42,0.08);padding:4px 12px;border-radius:100px;
+  border:1px solid rgba(200,150,42,0.18);letter-spacing:0.05em;
 }
 
-/* ─── INSTALL PROCESS ─── */
-.install{padding:100px 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.install-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
+/* ─── INSTALL ─── */
+.install-sec{
+  padding:100px 0;
+  background:var(--white);
+  border-top:1px solid var(--parchment);
+  border-bottom:1px solid var(--parchment);
+}
+.install-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
 .install-steps::before{
-  content:'';position:absolute;top:22px;left:10%;right:10%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--border) 10%,var(--border) 90%,transparent);
+  content:'';position:absolute;top:21px;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--parchment) 10%,var(--parchment) 90%,transparent);
   z-index:0;
 }
-.istep{text-align:center;position:relative;z-index:1;padding:0 16px}
-.istep-num{
-  width:44px;height:44px;border-radius:50%;
-  background:var(--white);border:1px solid var(--border);
+.is{text-align:center;position:relative;z-index:1;padding:0 20px}
+.is-num{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--white);border:1px solid var(--parchment);
   display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:700;color:var(--ink);
-  margin:0 auto 20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);
-  transition:all .2s;font-family:'Syne',sans-serif;
+  font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--ink);
+  margin:0 auto 22px;box-shadow:0 2px 10px rgba(0,0,0,0.05);transition:all .25s;
 }
-.istep:hover .istep-num{background:var(--gold);color:#fff;border-color:var(--gold);box-shadow:0 4px 16px rgba(200,146,42,0.4)}
-.istep-num.active{background:var(--gold);color:#fff;border-color:var(--gold)}
-.istep-title{font-size:15px;font-weight:600;margin-bottom:8px}
-.istep-desc{font-size:13px;color:var(--muted);line-height:1.65}
-
-/* ─── FOOTER ─── */
-footer{background:linear-gradient(135deg,#0d1f1c,#112824);border-top:1px solid rgba(255,255,255,0.06);padding:60px 24px 40px}
-.footer-inner{max-width:1160px;margin:0 auto}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap;margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,0.35);margin-top:14px;max-width:240px;line-height:1.6}
-.footer-social{display:flex;gap:10px;margin-top:18px}
-.soc-btn{
-  width:34px;height:34px;border-radius:50%;
-  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,0.45);text-decoration:none;
-  transition:all .2s;
-}
-.soc-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
-.soc-btn svg{width:14px;height:14px}
-.footer-links{display:flex;gap:64px;flex-wrap:wrap}
-.fcol h5{font-size:12px;font-weight:600;color:rgba(255,255,255,0.25);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px}
-.fcol a{display:block;font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:10px;transition:color .15s}
-.fcol a:hover{color:#fff}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.footer-copy{font-size:12px;color:rgba(255,255,255,0.2);letter-spacing:0.03em}
-.footer-status{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.3)}
-.status-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:goldPulse 2.5s ease-in-out infinite}
-@keyframes goldPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(230,180,85,0.4)}50%{opacity:.7;box-shadow:0 0 0 4px rgba(230,180,85,0)}}
+.is-num.active,.is:hover .is-num{background:var(--gold);color:#fff;border-color:var(--gold);box-shadow:0 4px 20px rgba(200,150,42,0.35)}
+.is-t{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em}
+.is-d{font-size:13px;color:var(--muted);line-height:1.65}
 
 /* ─── CREDITS ─── */
-.credits-section{
-  padding:60px 0;
-  background:var(--bg2);
-  border-top:1px solid var(--border);
+.credits-sec{
+  padding:72px 0;background:var(--sand);border-top:1px solid var(--parchment);
 }
-.credits-inner{max-width:1160px;margin:0 auto;padding:0 24px;text-align:center}
+.credits-inner{max-width:1100px;margin:0 auto;padding:0 24px;text-align:center}
 .credits-title{
-  font-family:'Syne',sans-serif;font-size:24px;font-weight:700;
+  font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;
   margin-bottom:8px;letter-spacing:-0.02em;
 }
 .credits-sub{font-size:14px;color:var(--muted);margin-bottom:36px}
-.credits-grid{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
-}
+.credits-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .credit-chip{
   display:inline-flex;align-items:center;gap:8px;
-  background:var(--white);border:1px solid var(--border);
-  border-radius:100px;padding:8px 18px;
+  background:var(--white);border:1px solid var(--parchment);
+  border-radius:100px;padding:9px 20px;
   font-size:13px;font-weight:500;color:var(--ink2);
-  text-decoration:none;
-  transition:all .2s;
+  text-decoration:none;transition:all .2s;
 }
-.credit-chip:hover{border-color:#d8c5aa;transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.06);text-decoration:none}
-.credit-chip span{font-size:16px}
+.credit-chip:hover{border-color:#d0c2b0;transform:translateY(-2px);box-shadow:0 4px 18px rgba(0,0,0,0.06)}
 
-/* ─── REVEAL ─── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
+/* ─── FOOTER ─── */
+footer{
+  background:linear-gradient(160deg,#06100d 0%,#0d1e16 100%);
+  border-top:1px solid rgba(200,150,42,0.12);
+  padding:68px 24px 44px;
+}
+.fi{max-width:1160px;margin:0 auto}
+.ft{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap;margin-bottom:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.fb svg text{font-family:'Cormorant Garamond',serif!important}
+.fb p{font-size:13px;color:rgba(255,255,255,0.3);margin-top:16px;max-width:220px;line-height:1.6}
+.fso{display:flex;gap:10px;margin-top:18px}
+.sb{
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.35);text-decoration:none;transition:all .2s;
+}
+.sb:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.sb svg{width:14px;height:14px}
+.flinks{display:flex;gap:56px;flex-wrap:wrap}
+.fcol h5{font-size:11px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px}
+.fcol a{display:block;font-size:13.5px;color:rgba(255,255,255,0.42);text-decoration:none;margin-bottom:10px;transition:color .15s}
+.fcol a:hover{color:#fff}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fcopy{font-size:11.5px;color:rgba(255,255,255,0.18);letter-spacing:0.03em}
+.fver{display:flex;align-items:center;gap:7px;font-size:11.5px;color:rgba(255,255,255,0.28)}
+.vdot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:gp 2.5s ease-in-out infinite}
+@keyframes gp{0%,100%{opacity:1}50%{opacity:.5}}
 
 /* ─── RESPONSIVE ─── */
-@media(max-width:900px){
+@media(max-width:960px){
   .hamburger{display:flex}
   .nav-links{
-    position:fixed;top:0;right:-100%;width:80%;max-width:320px;
-    height:100vh;background:var(--white);
-    flex-direction:column;align-items:flex-start;justify-content:flex-start;
-    padding:100px 32px 32px;gap:8px;
-    transition:right .35s cubic-bezier(0.4,0,0.2,1);
-    box-shadow:-4px 0 32px rgba(0,0,0,0.12);z-index:999;
+    position:fixed;top:0;right:-100%;width:76%;max-width:300px;height:100vh;
+    background:var(--night);flex-direction:column;align-items:flex-start;
+    justify-content:flex-start;padding:100px 28px 32px;gap:4px;
+    transition:right .35s cubic-bezier(.4,0,.2,1);
+    box-shadow:-4px 0 40px rgba(0,0,0,0.4);z-index:999;
+    border-left:1px solid rgba(200,150,42,0.15);
   }
   .nav-links.active{right:0}
-  .nav-links a{
-    width:100%;padding:14px 18px;font-size:16px;
-    border-radius:var(--radius-sm);background:transparent;
-  }
-  .nav-links a:hover{background:var(--bg2)}
+  .nav-links a{width:100%;padding:13px 18px;font-size:16px;border-radius:var(--r);background:transparent;color:rgba(255,255,255,0.7)}
+  .nav-links a:hover{background:rgba(255,255,255,0.06);color:#fff}
   .nav-cta{display:none}
   .feat-grid{grid-template-columns:1fr 1fr}
-  .showcase-inner{grid-template-columns:1fr;gap:48px}
+  .showcase-inner{grid-template-columns:1fr;gap:52px}
   .prayer-grid{grid-template-columns:1fr}
-  .install-steps{grid-template-columns:1fr 1fr;gap:24px}
+  .install-steps{grid-template-columns:1fr 1fr;gap:28px}
   .install-steps::before{display:none}
-  .hero-stats-row{flex-wrap:wrap}
-  .hstat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);flex:1 1 45%}
+  .hero-stats{flex-wrap:wrap}
+  .hst{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07);flex:1 1 45%}
+  .sh-right{grid-template-columns:1fr 1fr}
 }
-  .nav-links.active{right:0}
-  .nav-links a{
-    width:100%;padding:14px 18px;font-size:16px;
-    border-radius:var(--radius-sm);background:transparent;
-  }
-  .nav-links a:hover{background:var(--bg2)}
-  .nav-cta{display:none}
-  .feat-grid{grid-template-columns:1fr 1fr}
-  .showcase-inner{grid-template-columns:1fr;gap:48px}
-  .prayer-grid{grid-template-columns:1fr}
-  .install-steps{grid-template-columns:1fr 1fr;gap:24px}
-  .install-steps::before{display:none}
-  .hero-stats-row{flex-wrap:wrap}
-  .hstat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);flex:1 1 45%}
-  .showcase-right{grid-template-columns:1fr 1fr}
-}
-  .nav-links.active{right:0}
-  .nav-links a{
-    width:100%;padding:14px 18px;font-size:16px;
-    border-radius:var(--radius-sm);background:transparent;
-  }
-  .nav-links a:hover{background:var(--bg2)}
-  .nav-cta{display:none}
-  nav{padding:10px 10px 10px 20px;gap:16px}
-  .feat-grid{grid-template-columns:1fr 1fr}
-  .showcase-inner{grid-template-columns:1fr;gap:48px}
-  .prayer-grid{grid-template-columns:1fr}
-  .install-steps{grid-template-columns:1fr 1fr;gap:24px}
-  .install-steps::before{display:none}
-  .hero-stats-row{flex-wrap:wrap}
-  .hstat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);flex:1 1 45%}
-  .showcase-right{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
+@media(max-width:620px){
   .feat-grid{grid-template-columns:1fr}
   .install-steps{grid-template-columns:1fr}
-  .footer-links{flex-direction:column;gap:32px}
-  .hero-stats-row{flex-direction:column}
-  .showcase-right{grid-template-columns:1fr}
+  .flinks{flex-direction:column;gap:32px}
+  .hero-stats{flex-direction:column}
+  .sh-right{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════ HEADER ═══════════════ -->
+<!-- ANNOUNCE BAR -->
+<div class="ann-bar" id="annBar">
+  <span class="ann-moon">🌙</span>
+  <span class="ann-pill">New</span>
+  <span class="ann-txt"><strong>Islamic Homepage v1.02</strong> is now live on the Chrome Web Store</span>
+  <button class="ann-close" onclick="this.closest('#annBar').style.display='none'" aria-label="Close">✕</button>
+</div>
+
+<!-- NAV -->
 <header>
   <nav id="mainNav">
-  <a href="Islamic-Homepage.html" class="nav-logo">
-    <span class="nav-logo-icon">🕌</span>
-    <span class="nav-logo-text">Islamic <span>Homepage</span></span>
-  </a>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
-    <a href="#features">Features</a>
-    <a href="#showcase">Gallery</a>
-    <a href="#prayer">Prayer Times</a>
-    <a href="#install">Install</a>
-    <a href="islamic-homepage-privacy-policy.html" target="_blank">Privacy</a>
-  </div>
-  <a href="https://chromewebstore.google.com" target="_blank" class="nav-cta">
-    Add to Chrome
-    <span class="nav-cta-arrow">
+    <a href="Islamic-Homepage.html" class="nav-logo">
+      <span class="nav-logo-icon">🕌</span>
+      <span class="nav-logo-text">Islamic <span>Homepage</span></span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#features">Features</a>
+      <a href="#showcase">Gallery</a>
+      <a href="#prayer">Prayer Times</a>
+      <a href="#install">Install</a>
+      <a href="privacy-policy.html" target="_blank">Privacy</a>
+    </div>
+    <a href="https://chromewebstore.google.com" target="_blank" class="nav-cta">
+      Add to Chrome
       <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
-    </span>
-   </a>
+    </a>
   </nav>
- </header>
+</header>
 
- <main>
+<main>
 
-<!-- ═══════════════ HERO ═══════════════ -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
-  <div class="hero-glow1"></div>
+  <!-- Geometric pattern -->
+  <div class="hero-geo">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="geoP" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="rgba(200,150,42,0.14)" stroke-width="0.6">
+            <polygon points="40,4 76,22 76,58 40,76 4,58 4,22"/>
+            <polygon points="40,16 64,28 64,52 40,64 16,52 16,28"/>
+            <line x1="40" y1="4" x2="40" y2="16"/>
+            <line x1="76" y1="22" x2="64" y2="28"/>
+            <line x1="76" y1="58" x2="64" y2="52"/>
+            <line x1="40" y1="76" x2="40" y2="64"/>
+            <line x1="4" y1="58" x2="16" y2="52"/>
+            <line x1="4" y1="22" x2="16" y2="28"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#geoP)" opacity="0.6"/>
+    </svg>
+  </div>
+  <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
-  <!-- Procedural stars -->
   <div id="stars"></div>
 
-  <div class="hero-badge reveal">
-    <span class="badge-dot"></span>
+  <div class="hero-eyebrow reveal">
+    <span class="ey-dot"></span>
     Free Extension &nbsp;·&nbsp; Chrome Web Store &nbsp;·&nbsp; v1.02
   </div>
-
   <p class="hero-arabic reveal" style="transition-delay:.04s">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-
   <h1 class="hero-title reveal" style="transition-delay:.08s">
     Your new tab,<br>
-    your <span class="hl-gold">daily reminder</span><br>
+    your <span class="hl">daily reminder</span><br>
     <span class="hl-stroke">to pray.</span>
   </h1>
-
   <p class="hero-sub reveal" style="transition-delay:.13s">
     Accurate prayer times, Quranic verses, and a cinematic night-sky background — all in your browser's new tab.
   </p>
-
-  <div class="hero-actions reveal" style="transition-delay:.18s">
+  <div class="hero-btns reveal" style="transition-delay:.18s">
     <a href="https://chromewebstore.google.com" target="_blank" class="btn-gold">
       Add to Chrome — It's Free
-      <span class="arr-wrap">
-        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+      <span class="btn-gold-arr">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
       </span>
     </a>
     <a href="#features" class="btn-ghost">Explore Features</a>
   </div>
-
-  <div class="hero-stats-row reveal" style="transition-delay:.22s">
-    <div class="hstat">
-      <div class="hstat-num"><span>20</span>+</div>
-      <div class="hstat-label">Calc. Methods</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-num"><span>5</span></div>
-      <div class="hstat-label">Daily Prayers</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-num">100<span>%</span></div>
-      <div class="hstat-label">Local Data</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-num"><span>0</span></div>
-      <div class="hstat-label">Data Collected</div>
-    </div>
+  <div class="hero-stats reveal" style="transition-delay:.22s">
+    <div class="hst"><div class="hst-n"><em>20</em>+</div><div class="hst-l">Calc. Methods</div></div>
+    <div class="hst"><div class="hst-n"><em>5</em></div><div class="hst-l">Daily Prayers</div></div>
+    <div class="hst"><div class="hst-n">100<em>%</em></div><div class="hst-l">Local Data</div></div>
+    <div class="hst"><div class="hst-n"><em>0</em></div><div class="hst-l">Data Collected</div></div>
   </div>
 </section>
 
-<!-- ═══════════════ VIDEO SECTION ═══════════════ -->
-<section class="video-section" id="video">
-  <div class="section-wrap">
-    <div class="video-top">
-      <div class="reveal">
-        <div class="section-tag"><span class="section-tag-dot"></span>See It In Action</div>
-        <h2 class="section-title">A day in the life of<br><em>Islamic Homepage</em></h2>
-      </div>
-      <p class="section-sub reveal" style="transition-delay:.08s">Watch the 24-hour cinematic cycle — from Fajr's dawn glow to Isha's star-filled night. Full gradient transitions, prayer time indicators, and serene animations.</p>
-    </div>
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="mi">📢 NEW VERSION: Islamic Homepage 1.02 Release</div>
+    <div class="mi">🎉 Islamic Homepage v1.02 Now Available</div>
+    <div class="mi">🕌 Experience the Updated Islamic Homepage</div>
+    <div class="mi">✨ Fresh Release: Islamic Homepage 1.02</div>
+    <div class="mi">🌟 Islamic Homepage 1.02 — Just Launched</div>
+    <div class="mi">📣 Version 1.02 of Islamic Homepage is Live</div>
+    <div class="mi">📢 NEW VERSION: Islamic Homepage 1.02 Release</div>
+    <div class="mi">🎉 Islamic Homepage v1.02 Now Available</div>
+    <div class="mi">🕌 Experience the Updated Islamic Homepage</div>
+    <div class="mi">✨ Fresh Release: Islamic Homepage 1.02</div>
+    <div class="mi">🌟 Islamic Homepage 1.02 — Just Launched</div>
+    <div class="mi">📣 Version 1.02 of Islamic Homepage is Live</div>
+  </div>
+</div>
 
-    <!-- Large video player -->
-    <div class="video-player-wrapper reveal" style="transition-delay:.12s">
-      <div class="video-player">
-        <video autoplay muted loop playsinline controls style="width:100%;height:100%;object-fit:cover;border-radius:20px;">
+<!-- VIDEO -->
+<section class="vid-sec" id="video">
+  <div class="wrap">
+    <div class="vid-top">
+      <div class="reveal">
+        <div class="stag"><span class="stag-dot"></span>See It In Action</div>
+        <h2 class="stit">A day in the life of<br><em>Islamic Homepage</em></h2>
+      </div>
+      <p class="ssub reveal" style="transition-delay:.08s">Watch the 24-hour cinematic cycle — from Fajr's dawn glow to Isha's star-filled night. Full gradient transitions, prayer time indicators, and serene animations.</p>
+    </div>
+    <div class="reveal" style="transition-delay:.12s">
+      <div class="vid-frame">
+        <video autoplay muted loop playsinline controls>
           <source src="../../videos/video.webm" type="video/webm">
           Your browser does not support the video tag.
         </video>
-        <div class="video-overlay">
-          <div class="play-indicator">▶</div>
-        </div>
       </div>
-      <p class="video-caption">24-hour prayer cycle · Cinematic gradients · Auto-transitions</p>
+      <p class="vid-caption">24-hour prayer cycle · Cinematic gradients · Auto-transitions</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ FEATURES ═══════════════ -->
-<section class="features" id="features">
-  <div class="section-wrap">
-    <div class="features-top">
+<!-- FEATURES -->
+<section class="feat-sec" id="features">
+  <div class="wrap">
+    <div class="feat-top">
       <div class="reveal">
-        <div class="section-tag"><span class="section-tag-dot"></span>Features</div>
-        <h2 class="section-title">Everything you need,<br><em>spiritually designed.</em></h2>
+        <div class="stag"><span class="stag-dot"></span>Features</div>
+        <h2 class="stit">Everything you need,<br><em>spiritually designed.</em></h2>
       </div>
-      <p class="section-sub reveal" style="transition-delay:.08s">Built for busy Muslims who want to stay connected to their Salah without interrupting their workflow.</p>
+      <p class="ssub reveal" style="transition-delay:.08s">Built for busy Muslims who want to stay connected to their Salah without interrupting their workflow.</p>
     </div>
-
     <div class="feat-grid">
-      <!-- Card 1 -->
-      <div class="feat-card dark-card reveal">
-        <div class="feat-icon">🕌</div>
-        <div class="feat-num">01</div>
-        <h3 class="feat-name">Accurate Prayer Times</h3>
-        <p class="feat-desc">GPS-based with 20+ regional methods (Muslim World League, ISNA, Umm Al-Qura, Diyanet). Includes Hanafi/Shafi Asr, high-latitude adjustments, two midnight modes (Standard/Jafari), real-time countdown, color-coded progress bars. Visual indicators for forbidden times (Sunrise, Zawal, Ghurub).</p>
-        <div class="feat-tags">
-          <span class="feat-tag">GPS</span>
-          <span class="feat-tag">20+ Methods</span>
-          <span class="feat-tag">Real-time</span>
-          <span class="feat-tag">Forbidden Times</span>
-        </div>
+      <div class="fc fc-dark reveal" style="position:relative">
+        <span class="fc-icon">🕌</span>
+        <div class="fc-n">01</div>
+        <h3 class="fc-h">Accurate Prayer Times</h3>
+        <p class="fc-p">GPS-based with 20+ regional methods (Muslim World League, ISNA, Umm Al-Qura, Diyanet). Includes Hanafi/Shafi Asr, high-latitude adjustments, two midnight modes (Standard/Jafari), real-time countdown, color-coded progress bars. Visual indicators for forbidden times (Sunrise, Zawal, Ghurub).</p>
+        <div class="fc-tags"><span class="fc-tag">GPS</span><span class="fc-tag">20+ Methods</span><span class="fc-tag">Real-time</span><span class="fc-tag">Forbidden Times</span></div>
       </div>
-      <!-- Card 2 -->
-      <div class="feat-card reveal" style="transition-delay:.06s">
-        <div class="feat-icon">📖</div>
-        <div class="feat-num">02</div>
-        <h3 class="feat-name">Daily Quran Verse</h3>
-        <p class="feat-desc">A fresh Ayah every day with Arabic text and English translation. Navigate verse history and jump directly to Quran.com for full context. Works offline with local caching.</p>
-        <div class="feat-tags">
-          <span class="feat-tag">Arabic + English</span>
-          <span class="feat-tag">Offline Ready</span>
-        </div>
+      <div class="fc reveal" style="transition-delay:.06s;position:relative">
+        <span class="fc-icon">📖</span>
+        <div class="fc-n">02</div>
+        <h3 class="fc-h">Daily Quran Verse</h3>
+        <p class="fc-p">A fresh Ayah every day with Arabic text and English translation. Navigate verse history and jump directly to Quran.com for full context. Works offline with local caching.</p>
+        <div class="fc-tags"><span class="fc-tag">Arabic + English</span><span class="fc-tag">Offline Ready</span></div>
+        <div class="fc-bar"></div>
       </div>
-        <!-- Card 3 -->
-        <div class="feat-card reveal" style="transition-delay:.12s">
-          <div class="feat-icon">🌌</div>
-          <div class="feat-num">03</div>
-          <h3 class="feat-name">Cinematic Backgrounds</h3>
-          <p class="feat-desc">Real-time gradients transitioning through five distinct prayer-phase palettes. Night sky mode with procedurally generated stars, shooting stars, and God rays sweeping the screen at dawn. GPU-optimised, zero battery drain.</p>
-          <div class="feat-tags">
-            <span class="feat-tag">Dynamic</span>
-            <span class="feat-tag">GPU-Optimised</span>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="feat-card reveal" style="transition-delay:.18s">
-          <div class="feat-icon">🗺️</div>
-          <div class="feat-num">04</div>
-          <h3 class="feat-name">Smart Location</h3>
-          <p class="feat-desc">One-time geolocation permission — never tracked in background. Auto-detects your country and suggests the appropriate prayer calculation method. Global city database for manual search. Falls back to Makkah if denied.</p>
-          <div class="feat-tags">
-            <span class="feat-tag">Private</span>
-            <span class="feat-tag">Global Cities</span>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div class="feat-card reveal" style="transition-delay:.24s">
-          <div class="feat-icon">⚙️</div>
-          <div class="feat-num">05</div>
-          <h3 class="feat-name">Deep Customisation</h3>
-          <p class="feat-desc">12/24h clock, calculation method, juristic school, theme selector (Default Islamic Night), high-latitude mode, midnight mode. A settings modal with live preview before applying ensures nothing is a surprise. Reset to factory defaults anytime.</p>
-          <div class="feat-tags">
-            <span class="feat-tag">Live Preview</span>
-            <span class="feat-tag">Reset Anytime</span>
-          </div>
-        </div>
-        <!-- Card 6 — Notifications -->
-        <div class="feat-card dark-card reveal" style="transition-delay:.30s">
-          <div class="feat-icon">🔕</div>
-          <div class="feat-num">06</div>
-          <h3 class="feat-name">Respectful Notifications</h3>
-          <p class="feat-desc">Optional prayer time alerts with beautiful modal popups. 5-minute pre-prayer reminder, alarm sound with 30-second auto-stop. Cross-tab coordination ensures only one alert shows at a time. Disabled by default to respect your focus.</p>
-          <div class="feat-tags">
-            <span class="feat-tag">Respectful</span>
-            <span class="feat-tag">Cross-Tab</span>
-            <span class="feat-tag">Auto-Stop</span>
-          </div>
-        </div>
-        <!-- Card 7 — Support Widget -->
-        <div class="feat-card reveal" style="transition-delay:.36s">
-          <div class="feat-icon">☕</div>
-          <div class="feat-num">07</div>
-          <h3 class="feat-name">Support This Project</h3>
-          <p class="feat-desc">Optional "Buy me a coffee" support button that appears periodically. Fully dismissible and can be toggled from the About modal. Your support helps maintain this independent extension.</p>
-          <div class="feat-tags">
-            <span class="feat-tag">Optional</span>
-            <span class="feat-tag">Independent Dev</span>
-            <span class="feat-tag">Dismissible</span>
-          </div>
-        </div>
+      <div class="fc reveal" style="transition-delay:.12s;position:relative">
+        <span class="fc-icon">🌌</span>
+        <div class="fc-n">03</div>
+        <h3 class="fc-h">Cinematic Backgrounds</h3>
+        <p class="fc-p">Real-time gradients transitioning through five distinct prayer-phase palettes. Night sky mode with procedurally generated stars, shooting stars, and God rays sweeping the screen at dawn. GPU-optimised, zero battery drain.</p>
+        <div class="fc-tags"><span class="fc-tag">Dynamic</span><span class="fc-tag">GPU-Optimised</span></div>
+        <div class="fc-bar"></div>
       </div>
+      <div class="fc reveal" style="transition-delay:.18s;position:relative">
+        <span class="fc-icon">🗺️</span>
+        <div class="fc-n">04</div>
+        <h3 class="fc-h">Smart Location</h3>
+        <p class="fc-p">One-time geolocation permission — never tracked in background. Auto-detects your country and suggests the appropriate prayer calculation method. Global city database for manual search. Falls back to Makkah if denied.</p>
+        <div class="fc-tags"><span class="fc-tag">Private</span><span class="fc-tag">Global Cities</span></div>
+        <div class="fc-bar"></div>
+      </div>
+      <div class="fc reveal" style="transition-delay:.24s;position:relative">
+        <span class="fc-icon">⚙️</span>
+        <div class="fc-n">05</div>
+        <h3 class="fc-h">Deep Customisation</h3>
+        <p class="fc-p">12/24h clock, calculation method, juristic school, theme selector (Default Islamic Night), high-latitude mode, midnight mode. A settings modal with live preview before applying ensures nothing is a surprise. Reset to factory defaults anytime.</p>
+        <div class="fc-tags"><span class="fc-tag">Live Preview</span><span class="fc-tag">Reset Anytime</span></div>
+        <div class="fc-bar"></div>
+      </div>
+      <div class="fc fc-dark reveal" style="transition-delay:.30s;position:relative">
+        <span class="fc-icon">🔕</span>
+        <div class="fc-n">06</div>
+        <h3 class="fc-h">Respectful Notifications</h3>
+        <p class="fc-p">Optional prayer time alerts with beautiful modal popups. 5-minute pre-prayer reminder, alarm sound with 30-second auto-stop. Cross-tab coordination ensures only one alert shows at a time. Disabled by default to respect your focus.</p>
+        <div class="fc-tags"><span class="fc-tag">Respectful</span><span class="fc-tag">Cross-Tab</span><span class="fc-tag">Auto-Stop</span></div>
+      </div>
+      <div class="fc reveal" style="transition-delay:.36s;grid-column:1/-1;position:relative">
+        <div style="display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap">
+          <div style="flex:1;min-width:200px">
+            <span class="fc-icon">☕</span>
+            <div class="fc-n">07</div>
+            <h3 class="fc-h">Support This Project</h3>
+            <p class="fc-p">Optional "Buy me a coffee" support button that appears periodically. Fully dismissible and can be toggled from the About modal. Your support helps maintain this independent extension.</p>
+            <div class="fc-tags"><span class="fc-tag">Optional</span><span class="fc-tag">Independent Dev</span><span class="fc-tag">Dismissible</span></div>
+          </div>
+          <div style="flex:1;min-width:200px;padding-top:4px;border-left:1px solid var(--parchment);padding-left:36px">
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.75;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--ink2);">"Every time I open a new tab, I'm reminded of Salah. This extension quietly changed my relationship with my phone."</p>
+            <p style="margin-top:14px;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:0.05em;text-transform:uppercase">— Chrome Web Store Reviewer, ⭐ 4.9 / 127 reviews</p>
+          </div>
+        </div>
+        <div class="fc-bar"></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════ SHOWCASE / SCREENSHOTS ═══════════════ -->
+<!-- SHOWCASE -->
 <section class="showcase" id="showcase">
-  <div class="showcase-inner">
-    <div class="showcase-left reveal">
-      <div class="section-tag"><span class="section-tag-dot"></span>App Gallery</div>
-      <h2 class="showcase-title">Beautiful in every<br><span class="hl-gold">prayer phase</span></h2>
-      <div class="showcase-divider"></div>
-      <p class="showcase-lead">The extension adapts its color palette through Fajr, Dhuhr, Asr, Maghrib, and Isha — each with its own cinematic mood.</p>
-      <div class="showcase-list">
-        <div class="sh-item">
-          <span class="sh-num">🌄</span>
-          <div class="sh-text">
-            <h4>Fajr — Pre-Dawn Blues</h4>
-            <p>Deep indigo and soft violet as the sky begins to lighten before sunrise.</p>
+  <div class="geo-pat"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="showcase-inner">
+      <div class="sh-left reveal">
+        <div class="stag"><span class="stag-dot"></span>App Gallery</div>
+        <h2 class="sh-title">Beautiful in every<br><span class="hl">prayer phase</span></h2>
+        <div class="sh-divider"></div>
+        <p class="sh-lead">The extension adapts its color palette through Fajr, Dhuhr, Asr, Maghrib, and Isha — each with its own cinematic mood.</p>
+        <div class="sh-list">
+          <div class="sh-item">
+            <div class="sh-num">🌄</div>
+            <div class="sh-txt"><h4>Fajr — Pre-Dawn Blues</h4><p>Deep indigo and soft violet as the sky begins to lighten before sunrise.</p></div>
           </div>
-        </div>
-        <div class="sh-item">
-          <span class="sh-num">☀️</span>
-          <div class="sh-text">
-            <h4>Dhuhr & Asr — Warm Gold</h4>
-            <p>Rich amber tones with God rays sweeping across during peak daylight.</p>
+          <div class="sh-item">
+            <div class="sh-num">☀️</div>
+            <div class="sh-txt"><h4>Dhuhr & Asr — Warm Gold</h4><p>Rich amber tones with God rays sweeping across during peak daylight.</p></div>
           </div>
-        </div>
-        <div class="sh-item">
-          <span class="sh-num">🌅</span>
-          <div class="sh-text">
-            <h4>Maghrib — Sunset Crimson</h4>
-            <p>Deep orange and crimson at the most visually dramatic prayer of the day.</p>
+          <div class="sh-item">
+            <div class="sh-num">🌅</div>
+            <div class="sh-txt"><h4>Maghrib — Sunset Crimson</h4><p>Deep orange and crimson at the most visually dramatic prayer of the day.</p></div>
           </div>
-        </div>
-        <div class="sh-item">
-          <span class="sh-num">🌙</span>
-          <div class="sh-text">
-            <h4>Isha — Star-Filled Night</h4>
-            <p>Procedurally generated constellations with shooting stars across a midnight sky.</p>
+          <div class="sh-item">
+            <div class="sh-num">🌙</div>
+            <div class="sh-txt"><h4>Isha — Star-Filled Night</h4><p>Procedurally generated constellations with shooting stars across a midnight sky.</p></div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Full-width images side by side -->
-    <div class="showcase-right reveal" style="transition-delay:.12s">
-      <div class="showcase-row">
-        <img src="../../images/beautiful_in_every_prayer_phase/isha.jpeg" alt="Isha Night Mode" class="showcase-img" loading="lazy">
-      </div>
-      <div class="showcase-row">
-        <img src="../../images/beautiful_in_every_prayer_phase/dhuhr.png" alt="Dhuhr Daylight" class="showcase-img" loading="lazy">
-      </div>
-      <div class="showcase-row">
-        <img src="../../images/beautiful_in_every_prayer_phase/asr.png" alt="Asr Afternoon" class="showcase-img" loading="lazy">
+      <div class="sh-right reveal" style="transition-delay:.12s">
+        <div class="sh-img-row"><img src="../../images/beautiful_in_every_prayer_phase/isha.jpeg" alt="Isha Night Mode" loading="lazy"></div>
+        <div class="sh-img-row"><img src="../../images/beautiful_in_every_prayer_phase/dhuhr.png" alt="Dhuhr Daylight" loading="lazy"></div>
+        <div class="sh-img-row"><img src="../../images/beautiful_in_every_prayer_phase/asr.png" alt="Asr Afternoon" loading="lazy"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ PRAYER TIMES SECTION ═══════════════ -->
-<section class="prayer-section" id="prayer">
-  <div class="section-wrap">
+<!-- PRIVACY STRIP -->
+<section class="priv-strip">
+  <div class="geo-pat"></div>
+  <div class="priv-inner reveal">
+    <div class="priv-badge"><span class="ey-dot"></span>Privacy First &nbsp;·&nbsp; Zero Tracking &nbsp;·&nbsp; Open Source</div>
+    <h2 class="priv-title">Your data stays<br>in your <em>browser.</em></h2>
+    <p class="priv-sub">No servers. No accounts. No telemetry. Everything — your location, preferences, and verse history — lives only in your browser's local storage.</p>
+    <div class="priv-btns">
+      <a href="islamic-homepage-privacy-policy.html" target="_blank" class="btn-g">Read Privacy Policy ↗</a>
+      <a href="https://github.com/coretenofficial-debug/islamic-homepage-issues/issues" target="_blank" class="btn-ow">Report an Issue ↗</a>
+      <a href="https://chromewebstore.google.com" target="_blank" class="btn-ow">Chrome Store ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRAYER TIMES -->
+<section class="prayer-sec" id="prayer">
+  <div class="wrap">
     <div class="reveal" style="text-align:center">
-      <div class="section-tag" style="justify-content:center"><span class="section-tag-dot"></span>Prayer Schedule</div>
-      <h2 class="section-title" style="text-align:center">The five pillars of<br><em>your day</em></h2>
+      <div class="stag" style="justify-content:center"><span class="stag-dot"></span>Prayer Schedule</div>
+      <h2 class="stit" style="text-align:center">The five pillars of<br><em>your day</em></h2>
     </div>
     <div class="prayer-grid">
-      <div class="prayer-card reveal">
-        <div class="prayer-time">01</div>
-        <h3 class="prayer-name">🌄 Fajr</h3>
-        <p class="prayer-desc">The pre-dawn prayer — a quiet beginning before the world wakes. Calculated from true astronomical twilight based on your GPS location.</p>
-        <div class="prayer-pill">+ Forbidden Time: Sunrise</div>
+      <div class="pc reveal">
+        <div class="pc-n">01</div>
+        <h3 class="pc-name">🌄 Fajr</h3>
+        <p class="pc-desc">The pre-dawn prayer — a quiet beginning before the world wakes. Calculated from true astronomical twilight based on your GPS location.</p>
+        <div class="pc-pill">+ Forbidden Time: Sunrise</div>
       </div>
-      <div class="prayer-card reveal" style="transition-delay:.08s">
-        <div class="prayer-time">02</div>
-        <h3 class="prayer-name">☀️ Dhuhr</h3>
-        <p class="prayer-desc">The midday prayer — a moment of reflection at the peak of the day. Includes Zawal forbidden period marker.</p>
-        <div class="prayer-pill">+ Zawal Indicator</div>
+      <div class="pc reveal" style="transition-delay:.08s">
+        <div class="pc-n">02</div>
+        <h3 class="pc-name">☀️ Dhuhr</h3>
+        <p class="pc-desc">The midday prayer — a moment of reflection at the peak of the day. Includes Zawal forbidden period marker.</p>
+        <div class="pc-pill">+ Zawal Indicator</div>
       </div>
-      <div class="prayer-card reveal" style="transition-delay:.16s">
-        <div class="prayer-time">03</div>
-        <h3 class="prayer-name">🌤 Asr</h3>
-        <p class="prayer-desc">Afternoon prayer with full Hanafi and Shafi'i support. Set your preferred juristic school in settings — it updates in real-time.</p>
-        <div class="prayer-pill">Hanafi / Shafi'i</div>
+      <div class="pc reveal" style="transition-delay:.16s">
+        <div class="pc-n">03</div>
+        <h3 class="pc-name">🌤 Asr</h3>
+        <p class="pc-desc">Afternoon prayer with full Hanafi and Shafi'i support. Set your preferred juristic school in settings — it updates in real-time.</p>
+        <div class="pc-pill">Hanafi / Shafi'i</div>
       </div>
-      <div class="prayer-card reveal" style="transition-delay:.24s">
-        <div class="prayer-time">04</div>
-        <h3 class="prayer-name">🌆 Maghrib</h3>
-        <p class="prayer-desc">Sunset prayer — accompanied by the most dramatic color transition in the extension's background engine.</p>
-        <div class="prayer-pill">+ Ghurub Marker</div>
+      <div class="pc reveal" style="transition-delay:.24s">
+        <div class="pc-n">04</div>
+        <h3 class="pc-name">🌆 Maghrib</h3>
+        <p class="pc-desc">Sunset prayer — accompanied by the most dramatic color transition in the extension's background engine.</p>
+        <div class="pc-pill">+ Ghurub Marker</div>
       </div>
-      <div class="prayer-card reveal" style="transition-delay:.32s">
-        <div class="prayer-time">05</div>
-        <h3 class="prayer-name">🌙 Isha</h3>
-        <p class="prayer-desc">The night prayer — ending your day with spiritual closure. Features the darkest sky gradient with procedurally generated stars.</p>
-        <div class="prayer-pill">Star-Filled Night Mode</div>
+      <div class="pc reveal" style="transition-delay:.32s;grid-column:1/-1;max-width:560px;margin:0 auto;width:100%">
+        <div class="pc-n">05</div>
+        <h3 class="pc-name">🌙 Isha</h3>
+        <p class="pc-desc">The night prayer — ending your day with spiritual closure. Features the darkest sky gradient with procedurally generated stars.</p>
+        <div class="pc-pill">Star-Filled Night Mode</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ CTA STRIP ═══════════════ -->
-<section class="about-strip">
-  <div class="about-inner reveal">
-    <div class="about-badge">
-      <span class="badge-dot"></span>
-      Privacy First &nbsp;·&nbsp; Zero Tracking &nbsp;·&nbsp; Open Source
-    </div>
-    <h2 class="about-title">Your data stays<br>in your <em>browser.</em></h2>
-    <p class="about-sub">No servers. No accounts. No telemetry. Everything — your location, preferences, and verse history — lives only in your browser's local storage.</p>
-    <div class="about-btns">
-      <a href="islamic-homepage-privacy-policy.html" target="_blank" class="btn-accent">
-        Read Privacy Policy ↗
-      </a>
-      <a href="https://github.com/coretenofficial-debug/islamic-homepage-issues/issues" target="_blank" class="btn-outline-w">Report an Issue ↗</a>
-      <a href="https://chromewebstore.google.com" target="_blank" class="btn-outline-w">Chrome Store ↗</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ INSTALL STEPS ═══════════════ -->
-<section class="install" id="install">
-  <div class="section-wrap">
+<!-- INSTALL -->
+<section class="install-sec" id="install">
+  <div class="wrap">
     <div class="reveal" style="text-align:center">
-      <div class="section-tag" style="justify-content:center"><span class="section-tag-dot"></span>Get Started</div>
-      <h2 class="section-title" style="text-align:center">Install in <em>60 seconds</em></h2>
+      <div class="stag" style="justify-content:center"><span class="stag-dot"></span>Get Started</div>
+      <h2 class="stit" style="text-align:center">Install in <em>60 seconds</em></h2>
     </div>
     <div class="install-steps">
-      <div class="istep reveal">
-        <div class="istep-num active">01</div>
-        <div class="istep-title">Open Chrome Store</div>
-        <p class="istep-desc">Visit the Chrome Web Store and search for "Islamic Homepage" or click the link above.</p>
+      <div class="is reveal">
+        <div class="is-num active">01</div>
+        <div class="is-t">Open Chrome Store</div>
+        <p class="is-d">Visit the Chrome Web Store and search for "Islamic Homepage" or click the link above.</p>
       </div>
-      <div class="istep reveal" style="transition-delay:.08s">
-        <div class="istep-num">02</div>
-        <div class="istep-title">Add to Chrome</div>
-        <p class="istep-desc">Click "Add to Chrome" and confirm the extension permissions. No account required.</p>
+      <div class="is reveal" style="transition-delay:.08s">
+        <div class="is-num">02</div>
+        <div class="is-t">Add to Chrome</div>
+        <p class="is-d">Click "Add to Chrome" and confirm the extension permissions. No account required.</p>
       </div>
-      <div class="istep reveal" style="transition-delay:.16s">
-        <div class="istep-num">03</div>
-        <div class="istep-title">Allow Location</div>
-        <p class="istep-desc">Grant location permission once for accurate prayer times. It's stored locally — we never see it.</p>
+      <div class="is reveal" style="transition-delay:.16s">
+        <div class="is-num">03</div>
+        <div class="is-t">Allow Location</div>
+        <p class="is-d">Grant location permission once for accurate prayer times. It's stored locally — we never see it.</p>
       </div>
-      <div class="istep reveal" style="transition-delay:.24s">
-        <div class="istep-num">04</div>
-        <div class="istep-title">Open a New Tab</div>
-        <p class="istep-desc">That's it — every new tab is now your Islamic dashboard. بارك الله فيك</p>
+      <div class="is reveal" style="transition-delay:.24s">
+        <div class="is-num">04</div>
+        <div class="is-t">Open a New Tab</div>
+        <p class="is-d">That's it — every new tab is now your Islamic dashboard. بارك الله فيك</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ CREDITS ═══════════════ -->
-<section class="credits-section">
+<!-- CREDITS -->
+<section class="credits-sec">
   <div class="credits-inner reveal">
     <h3 class="credits-title">🤝 Built with gratitude</h3>
     <p class="credits-sub">Developed by Fardin Ahasan at CORE10, with contributions from:</p>
@@ -1109,35 +921,35 @@ footer{background:linear-gradient(135deg,#0d1f1c,#112824);border-top:1px solid r
       <div class="credit-chip"><span>📖</span> Alquran Cloud</div>
       <div class="credit-chip"><span>🗺️</span> OpenStreetMap</div>
     </div>
-   </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
+  <div class="fi">
+    <div class="ft">
+      <div class="fb">
         <svg width="160" height="32" viewBox="37 0 160 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="38" y="20.5" font-family="'Syne',sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORE</text>
-          <text x="112" y="19" font-family="'Syne',sans-serif" font-size="14" font-weight="800" fill="#e6b455">1</text>
-          <text x="119" y="19" font-family="'Syne',sans-serif" font-size="14" font-weight="800" fill="#ffffff">0</text>
+          <text x="38" y="20.5" font-family="'Cormorant Garamond',serif" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="0.5">CORE</text>
+          <text x="113" y="19" font-family="'Cormorant Garamond',serif" font-size="16" font-weight="700" fill="#e4b84e">1</text>
+          <text x="121" y="19" font-family="'Cormorant Garamond',serif" font-size="16" font-weight="700" fill="#ffffff">0</text>
         </svg>
         <p>Islamic Homepage — a serene new tab experience built for the modern Muslim. May Allah accept it from us all.</p>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/company/core10x10/" target="_blank" class="soc-btn">
+        <div class="fso">
+          <a href="https://www.linkedin.com/company/core10x10/" target="_blank" class="sb">
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a href="https://www.facebook.com/people/Core10/61588830811804/" target="_blank" class="soc-btn">
+          <a href="https://www.facebook.com/people/Core10/61588830811804/" target="_blank" class="sb">
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
           </a>
-          <a href="https://github.com/coretenofficial-debug/islamic-homepage-issues/issues" target="_blank" class="soc-btn">
+          <a href="https://github.com/coretenofficial-debug/islamic-homepage-issues/issues" target="_blank" class="sb">
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
           </a>
         </div>
       </div>
-      <div class="footer-links">
+      <div class="flinks">
         <div class="fcol">
           <h5>Product</h5>
           <a href="#features">Features</a>
@@ -1159,49 +971,84 @@ footer{background:linear-gradient(135deg,#0d1f1c,#112824);border-top:1px solid r
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 CORE10. Islamic Homepage is open source under MIT License.</span>
-      <div class="footer-status"><span class="status-dot"></span>v1.02 — Latest Stable</div>
+    <div class="fbot">
+      <span class="fcopy">© 2026 CORE10. Islamic Homepage is open source under MIT License.</span>
+      <div class="fver"><span class="vdot"></span>v1.02 — Latest Stable</div>
     </div>
   </div>
 </footer>
 
-<!-- ═══════════════ SUPPORT WIDGET ═══════════════ -->
-<script 
-  src="https://www.supportkori.com/widget.js" 
-  data-id="fardinxopencore" 
-  data-message="Support" 
-  data-color="#FFDD00" 
-  data-position="right"
-></script>
+<!-- SUPPORT WIDGET -->
+<script src="https://www.supportkori.com/widget.js" data-id="fardinxopencore" data-message="Support" data-color="#FFDD00" data-position="right"></script>
 
 <script>
-// Scroll reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('in')), 100);
+// Stars
+const starsEl = document.getElementById('stars');
+if(starsEl){
+  for(let i=0;i<120;i++){
+    const s = document.createElement('div');
+    s.className='star';
+    const sz=Math.random()*2.2+0.4;
+    s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--dur:${Math.random()*4+2}s;--op:${Math.random()*0.55+0.05};animation-delay:${Math.random()*5}s;position:absolute;`;
+    starsEl.appendChild(s);
+  }
+}
 
-// Mobile hamburger menu
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-if(hamburger && navLinks){
-  hamburger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.contains('active');
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', !isOpen);
-    document.body.style.overflow = !isOpen ? 'hidden' : '';
+// Announce bar height adjustment for nav
+function adjustNav(){
+  const bar=document.getElementById('annBar');
+  const nav=document.getElementById('mainNav');
+  if(!bar||!nav) return;
+  const h=bar.offsetHeight;
+  nav.style.top=(h+16)+'px';
+  window._barH=h;
+}
+adjustNav();
+document.querySelector('.ann-close')?.addEventListener('click',()=>{setTimeout(adjustNav,50)});
+window.addEventListener('resize',adjustNav);
+
+// Nav scroll
+let lastY=0;
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  const nav=document.getElementById('mainNav');
+  if(!nav) return;
+  const bar=document.getElementById('annBar');
+  const bh=(bar&&bar.offsetHeight>0)?bar.offsetHeight:0;
+  if(y>80){
+    nav.style.top=bh>0?bh+8+'px':'8px';
+    nav.style.background='rgba(6,12,10,0.92)';
+  } else {
+    nav.style.top=bh>0?bh+16+'px':'16px';
+    nav.style.background='rgba(9,20,16,0.82)';
+  }
+  lastY=y;
+});
+
+// Reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),120);
+
+// Hamburger
+const ham=document.getElementById('hamburger');
+const nl=document.getElementById('navLinks');
+if(ham&&nl){
+  ham.addEventListener('click',()=>{
+    const open=nl.classList.contains('active');
+    nl.classList.toggle('active');
+    ham.classList.toggle('active');
+    ham.setAttribute('aria-expanded',!open);
+    document.body.style.overflow=!open?'hidden':'';
   });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      hamburger.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
+  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    nl.classList.remove('active');
+    ham.classList.remove('active');
+    ham.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  }));
 }
 </script>
 </body>
