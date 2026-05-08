@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CORE10 — Software Development & IT Consulting</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORE10 — Custom Software Development & IT Consulting | Build with Purpose</title>
+  <meta name="description" content="CORE10 is a software development and IT consulting agency specializing in custom software, web development, QA & testing, AI product development, and digital consultancy. We build with love, transparency, and long-term partnership in mind.">
+  <meta name="keywords" content="software development, IT consulting, web development, QA testing, AI product development, digital consultancy, custom software, software agency, startup development, reliable engineering">
+  <meta name="author" content="CORE10">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://core10.site/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://core10.site/">
+  <meta property="og:title" content="CORE10 — Custom Software Development & IT Consulting | Build with Purpose">
+  <meta property="og:description" content="We build with love, not just code. Custom software, web development, QA, AI products, and digital consultancy. Transparent, reliable, long-term partners for your vision.">
+  <meta property="og:image" content="https://core10.site/images/og-homepage.jpg">
+  <meta property="og:site_name" content="CORE10">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://core10.site/">
+  <meta name="twitter:title" content="CORE10 — Custom Software Development & IT Consulting">
+  <meta name="twitter:description" content="We build with love, not just code. Trusted by startups and businesses for reliable, transparent software development.">
+  <meta name="twitter:image" content="https://core10.site/images/twitter-card.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Poppins:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CORE10",
+    "url": "https://core10.site/",
+    "logo": {"@type": "ImageObject", "url": "https://core10.site/images/logo.png"},
+    "description": "CORE10 is a software development and IT consulting agency building custom software, web apps, AI products, and providing QA and digital consultancy with transparency and long-term partnership.",
+    "address": {"@type": "PostalAddress", "addressCountry": "Global (Remote)"},
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "email",
+      "email": "coreten.official@gmail.com",
+      "availableLanguage": ["English"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/core10x10/",
+      "https://www.facebook.com/profile.php?id=61588830811804"
+    ]
+  }
+  </script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -20,10 +69,36 @@
   --accent-light:#fff0eb;
   --accent-glow:rgba(232,65,24,0.18);
   --radius:14px;
-  --radius-sm:8px;
-}
+   --radius-sm:8px;
+ }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:'Poppins',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ─── ANNOUNCEMENT BAR ─── */
+.announce-bar{
+  position:fixed;top:0;left:0;right:0;z-index:1001;
+  background:linear-gradient(135deg,#1a3a35 0%,#0d2420 50%,#1a2d3a 100%);
+  color:#fff;display:flex;align-items:center;justify-content:center;gap:16px;
+  padding:11px 48px 11px 24px;
+  font-size:13px;font-weight:500;
+  letter-spacing:0.02em;
+}
+.ann-badge{
+  background:rgba(200,146,42,0.25);border:1px solid rgba(200,146,42,0.4);
+  border-radius:100px;padding:2px 10px;font-size:11px;font-weight:700;
+  color:#e6b455;letter-spacing:0.06em;text-transform:uppercase;
+  flex-shrink:0;
+}
+.ann-text{color:rgba(255,255,255,0.9)}
+.ann-text strong{color:#fff}
+.announce-close{
+  position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  background:none;border:none;color:rgba(255,255,255,0.5);
+  cursor:pointer;width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;font-size:16px;line-height:1;
+}
+.announce-close:hover{background:rgba(255,255,255,0.1);color:#fff}
 
 /* ─── NAV ─── */
 nav{
@@ -570,13 +645,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
   .nav-links{display:none}
-  nav{padding:10px 10px 10px 20px;gap:16px}
+  nav{padding:10px 10px 10px 20px;gap:16px;top:70px}
   .svc-grid{grid-template-columns:1fr 1fr}
   .problem-grid,.why-grid{grid-template-columns:1fr}
   .process-steps{grid-template-columns:1fr 1fr;gap:24px}
   .process-steps::before{display:none}
   .hero-stats-row{flex-wrap:wrap}
   .hstat{border-right:none;border-bottom:1px solid var(--border);flex:1 1 45%}
+  .announce-bar{padding:11px 24px 11px 20px;font-size:12px}
+  .announce-bar a{gap:6px}
+  .announce-bar span:last-child{display:none}
 }
 @media(max-width:600px){
   .svc-grid{grid-template-columns:1fr}
@@ -584,19 +662,25 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding
   .footer-links{flex-direction:column;gap:32px}
   .hero-stats-row{flex-direction:column}
   .hstat{border-bottom:1px solid var(--border);border-right:none}
+  .announce-bar{padding:10px 16px 10px 16px}
+  .announce-bar a{gap:4px}
+  .announce-bar span:last-child{display:none}
 }
+
+/* Banner closed state — moves navbar up */
+.banner-closed nav{top:16px !important}
 </style>
 </head>
 <body>
 
 <!-- ═══════════════ ANNOUNCEMENT BAR ═══════════════ -->
-<div class="announce-bar" style="position:fixed;top:0;left:0;right:0;z-index:1001;background:linear-gradient(135deg,#1a3a35 0%,#0d2420 50%,#1a2d3a 100%);color:#fff;display:flex;align-items:center;justify-content:center;gap:16px;padding:11px 48px 11px 24px;font-size:13px;font-weight:500;letter-spacing:0.02em;">
-  <a href="pages/islamic-homepage/Islamic-Homepage.html" target="_blank" style="display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none">
-    <span style="background:rgba(200,146,42,0.25);border:1px solid rgba(200,146,42,0.4);border-radius:100px;padding:2px 10px;font-size:11px;font-weight:700;color:#e6b455;letter-spacing:0.06em;text-transform:uppercase;flex-shrink:0">NEW RELEASE</span>
-    <span>Islamic Homepage v1.02 is now live — click to check it out</span>
+<div class="announce-bar">
+  <a href="pages/islamic-homepage/Islamic-Homepage.html" target="_blank">
+    <span class="ann-badge">NEW RELEASE</span>
+    <span class="ann-text">Islamic Homepage v1.02 is now live — <strong>click to check it out</strong></span>
     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
-  <button onclick="this.parentElement.style.display='none';document.querySelector('nav').style.top='16px'" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:16px;line-height:1;">&times;</button>
+  <button class="announce-close" onclick="this.parentElement.style.display='none';document.documentElement.classList.add('banner-closed')">&times;</button>
 </div>
 
 <!-- ═══════════════ NAV ═══════════════ -->
@@ -1025,6 +1109,55 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding
         </div>
       </div>
     </div>
+   </div>
+</section>
+
+<!-- ═══════════════ OPEN-SOURCE PHILOSOPHY ═══════════════ -->
+<section class="opensource" style="padding:100px 24px;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);text-align:center">
+  <div class="section-wrap" style="max-width:860px;margin:0 auto">
+    <div class="reveal">
+      <div class="section-tag"><span class="section-tag-dot"></span>Open Source Philosophy</div>
+      <h2 class="section-title">Building for the<br><em>community, not profit</em></h2>
+      <p class="section-sub" style="margin:0 auto 40px">At CORE10, we believe great software should be accessible to everyone. That's why we create and maintain open-source products — free, privacy-respecting, and built with love for the global community of learners and builders.</p>
+    </div>
+    
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:48px">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:left">
+        <div style="font-size:28px;margin-bottom:12px">🌍</div>
+        <h4 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px">Free for All</h4>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7">No paywalls, no premium tiers. Our open-source products are 100% free and accessible to everyone, forever.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:left">
+        <div style="font-size:28px;margin-bottom:12px">🔒</div>
+        <h4 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px">Privacy First</h4>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7">We never sell your data. Our open-source tools respect your privacy — local storage only, no tracking, no telemetry.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:left">
+        <div style="font-size:28px;margin-bottom:12px">🤝</div>
+        <h4 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px">Community Driven</h4>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7">We engage directly with users, welcome contributions, and grow together. Issues, feedback, and PRs are always welcome on GitHub.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:left">
+        <div style="font-size:28px;margin-bottom:12px">📚</div>
+        <h4 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px">Empowering Learners</h4>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7">We're committed to helping developers and designers learn, grow, and build better — through documentation, tutorials, and community support.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="background:var(--ink);border-radius:var(--radius);padding:48px 40px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 50%,rgba(232,65,24,0.1) 0%,transparent 65%)"></div>
+      <div style="position:relative;z-index:2">
+        <h3 style="font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:12px">Our open-source mission</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.6);max-width:680px;margin:0 auto 24px">We create tools that make a difference — for Muslims managing daily prayers, developers needing reliable utilities, and anyone seeking thoughtful, well-built software. No ads, no data harvesting, no hidden agenda. Just good software, made with love.</p>
+        <a href="pages/islamic-homepage/Islamic-Homepage.html" class="btn-dark" style="display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;padding:12px 24px;border-radius:100px;text-decoration:none;transition:all .2s">
+          View Our Open-Source Projects
+          <span style="width:24px;height:24px;border-radius:50%;background:var(--accent2);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 

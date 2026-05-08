@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://core10.site/sitemap.txt
+
+# Disallow admin paths (if any future admin)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all public assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /pages/islamic-homepage/
+
+# Crawl delay for respectful scraping
+Crawl-delay: 1
