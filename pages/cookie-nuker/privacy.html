@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Cookie Nuker by CORE10</title>
+  <meta name="description" content="Cookie Nuker Privacy Policy. We collect no data, no telemetry, no tracking. Learn exactly how the extension works and what permissions it uses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #e02020;
+      --red-light: #fef2f2;
+      --red-mid: #fecaca;
+      --red-border: #f87171;
+      --green: #16a34a;
+      --green-light: #f0fdf4;
+      --green-border: #86efac;
+      --bg: #ffffff;
+      --bg2: #f8f8f8;
+      --bg3: #f1f1f1;
+      --border: #1a1a1a;
+      --border-light: #d4d4d4;
+      --text: #0f0f0f;
+      --text-mid: #404040;
+      --text-dim: #737373;
+      --mono: 'DM Mono', monospace;
+      --display: 'Syne', sans-serif;
+      --body: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── ANNOUNCE BAR ── */
+    .announce-bar {
+      background: var(--text);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      padding: 9px 0;
+      text-align: center;
+    }
+    .announce-bar a { color: var(--red-mid); text-decoration: none; font-weight: 500; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--border);
+      padding: 0 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--display); font-size: 17px; font-weight: 800;
+      color: var(--text); text-decoration: none; letter-spacing: -0.3px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-pill {
+      background: var(--red); color: #fff;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 1px;
+      padding: 3px 8px; border: 2px solid var(--text);
+    }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.5px;
+      color: var(--text-mid); text-decoration: none; text-transform: uppercase;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta {
+      background: var(--text) !important; color: #fff !important;
+      padding: 9px 20px; font-family: var(--mono) !important; font-size: 12px !important;
+      font-weight: 500 !important; letter-spacing: 0.5px; border: 2px solid var(--text);
+      transition: background .15s, color .15s !important;
+    }
+    .nav-cta:hover { background: var(--red) !important; border-color: var(--red) !important; }
+
+    /* ── HERO ── */
+    .policy-hero {
+      border-bottom: 2px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .policy-hero-left {
+      padding: 72px 6vw;
+      border-right: 2px solid var(--border);
+    }
+    .policy-hero-right {
+      padding: 72px 6vw;
+      background: var(--bg2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .section-eyebrow {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 2px;
+      color: var(--red); text-transform: uppercase; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-eyebrow::before { content: ''; display: inline-block; width: 18px; height: 2px; background: var(--red); }
+    .policy-hero h1 {
+      font-family: var(--display); font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800; color: var(--text); letter-spacing: -2px; line-height: 1.0;
+      margin-bottom: 20px;
+    }
+    .policy-hero h1 span { color: var(--red); display: block; }
+    .policy-hero-left p { color: var(--text-mid); font-size: 15px; max-width: 400px; line-height: 1.7; }
+    .policy-meta {
+      margin-top: 28px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .meta-row {
+      display: flex; align-items: center; gap: 12px;
+      font-family: var(--mono); font-size: 11px;
+    }
+    .meta-label { color: var(--text-dim); letter-spacing: 0.5px; min-width: 100px; }
+    .meta-val { color: var(--text); font-weight: 500; }
+
+    /* ── TLDR ── */
+    .tldr-section {
+      border-bottom: 2px solid var(--border);
+    }
+    .tldr-header {
+      padding: 52px 6vw 36px;
+      border-bottom: 2px solid var(--border);
+    }
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .section-title span { color: var(--red); }
+    .tldr-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .tldr-card {
+      padding: 28px 24px;
+      border-right: 2px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+    }
+    .tldr-card:last-child { border-right: none; }
+    .tldr-card.yes { background: var(--green-light); }
+    .tldr-card.no  { background: var(--red-light); }
+    .tldr-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .tldr-card.yes .tldr-icon { color: var(--green); }
+    .tldr-card.no  .tldr-icon { color: var(--red); }
+    .tldr-text { color: var(--text-mid); line-height: 1.55; }
+
+    /* ── POLICY LAYOUT ── */
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      align-items: start;
+      border-bottom: 2px solid var(--border);
+    }
+    .policy-sidebar {
+      padding: 48px 32px;
+      border-right: 2px solid var(--border);
+      position: sticky;
+      top: 64px;
+    }
+    .sidebar-label {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-dim);
+      margin-bottom: 20px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .sidebar-nav li a {
+      font-family: var(--mono); font-size: 12px; color: var(--text-mid);
+      text-decoration: none; display: block; padding: 6px 10px;
+      border: 1.5px solid transparent;
+      transition: color .15s, border-color .15s, background .15s;
+    }
+    .sidebar-nav li a:hover { color: var(--red); border-color: var(--red-border); background: var(--red-light); }
+
+    /* ── POLICY CONTENT ── */
+    .policy-content { padding: 48px 5vw 72px; }
+    .policy-section { margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1.5px solid var(--border-light); }
+    .policy-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .policy-section h2 {
+      font-family: var(--display); font-size: 20px; font-weight: 800;
+      color: var(--text); letter-spacing: -0.3px;
+      margin-bottom: 20px; padding-bottom: 14px;
+      border-bottom: 2px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .policy-section h2::before {
+      content: attr(data-n);
+      font-family: var(--mono); font-size: 11px; font-weight: 400;
+      color: var(--red); letter-spacing: 1px;
+      padding: 2px 8px; border: 1.5px solid var(--red-border);
+      background: var(--red-light);
+    }
+    .policy-section p { color: var(--text-mid); margin-bottom: 16px; font-size: 15px; line-height: 1.75; }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section strong { color: var(--text); font-weight: 600; }
+    .policy-section a { color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red-border); }
+    .policy-section a:hover { background: var(--red-light); }
+    .policy-section code {
+      font-family: var(--mono); font-size: 13px; color: var(--red);
+      background: var(--red-light); padding: 1px 6px;
+      border: 1px solid var(--red-border);
+    }
+
+    /* PERMISSION TABLE */
+    .perm-table { width: 100%; border-collapse: collapse; margin: 20px 0; border: 2px solid var(--border); }
+    .perm-table th {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-dim);
+      text-align: left; padding: 11px 16px;
+      background: var(--bg2); border-bottom: 2px solid var(--border);
+    }
+    .perm-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+    .perm-table tr:last-child td { border-bottom: none; }
+    .perm-table tr:hover td { background: var(--bg2); }
+    .perm-name { font-family: var(--mono); font-size: 12px; color: var(--red); font-weight: 500; }
+    .perm-desc { color: var(--text-mid); }
+
+    /* DO LIST */
+    .do-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+    .do-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 14px; padding: 13px 16px;
+      background: var(--bg2); border: 1.5px solid var(--border-light);
+    }
+    .do-list li.yes { border-left: 3px solid var(--green); background: var(--green-light); }
+    .do-list li.no  { border-left: 3px solid var(--red); background: var(--red-light); }
+    .do-list li .marker { flex-shrink: 0; font-size: 15px; margin-top: 1px; }
+    .do-list li.yes .marker { color: var(--green); }
+    .do-list li.no  .marker { color: var(--red); }
+    .do-list li .txt { color: var(--text-mid); }
+    .do-list li .txt strong { color: var(--text); font-weight: 600; }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--bg2); border: 2px solid var(--border);
+      padding: 32px 36px; margin-top: 20px;
+      box-shadow: 4px 4px 0 var(--border);
+    }
+    .contact-row {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 14px; font-size: 14px;
+      padding-bottom: 14px; border-bottom: 1px solid var(--border-light);
+    }
+    .contact-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .contact-label { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); min-width: 90px; padding-top: 2px; }
+    .contact-val { color: var(--text); }
+    .contact-val a { color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red-border); }
+    .contact-val a:hover { background: var(--red-light); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg); border-top: 2px solid var(--border); }
+    .footer-mid {
+      max-width: 100%; padding: 40px 6vw 28px;
+      display: flex; flex-wrap: wrap; gap: 24px;
+      align-items: center; justify-content: space-between;
+      border-bottom: 2px solid var(--border);
+    }
+    .footer-logo {
+      font-family: var(--display); font-size: 18px; font-weight: 800;
+      color: var(--text); text-decoration: none; letter-spacing: -0.5px;
+    }
+    .footer-by { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 5px; }
+    .footer-by a { color: var(--text-mid); text-decoration: none; }
+    .footer-socials { display: flex; gap: 8px; }
+    .social-link {
+      width: 36px; height: 36px; border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-mid); text-decoration: none; font-size: 13px; font-weight: 500;
+      transition: color .15s, background .15s, border-color .15s;
+    }
+    .social-link:hover { color: #fff; background: var(--text); border-color: var(--text); }
+    .footer-bottom {
+      padding: 16px 6vw;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); letter-spacing: 0.5px; }
+    .footer-bottom a { color: var(--text-dim); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--red); }
+
+    @media (max-width: 900px) {
+      .policy-hero { grid-template-columns: 1fr; }
+      .policy-hero-left { border-right: none; border-bottom: 2px solid var(--border); }
+      .tldr-grid { grid-template-columns: repeat(2, 1fr); }
+      .tldr-card:nth-child(2n) { border-right: none; }
+      .tldr-card:nth-child(1), .tldr-card:nth-child(2) { border-bottom: 2px solid var(--border); }
+      .policy-layout { grid-template-columns: 1fr; }
+      .policy-sidebar { display: none; }
+      nav .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .tldr-grid { grid-template-columns: 1fr; }
+      .tldr-card { border-right: none; border-bottom: 2px solid var(--border); }
+      .tldr-card:last-child { border-bottom: none; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCE BAR -->
+  <div class="announce-bar">
+    Cookie Nuker — 100% local, zero telemetry &nbsp;·&nbsp; <a href="https://core10.site/" target="_blank" rel="noopener">core10.site →</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="cookie_nuker.html">
+      COOKIE NUKER
+      <span class="nav-logo-pill">by CORE10</span>
+    </a>
+    <div class="nav-links">
+      <a href="cookie_nuker.html">← Back to Home</a>
+      <a href="mailto:coreten.official@gmail.com">Contact</a>
+      <a href="https://github.com/coretenofficial-debug/cookie-nuker-issues/issues" target="_blank" rel="noopener">Report Bug</a>
+      <a class="nav-cta" href="https://chrome.google.com/webstore" target="_blank" rel="noopener">Add to Chrome</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="policy-hero">
+    <div class="policy-hero-left">
+      <div class="section-eyebrow">Legal Document</div>
+      <h1>Privacy<span>Policy.</span></h1>
+      <p>Cookie Nuker is built on a simple principle: your data is none of our business. Here's exactly what the extension does — and doesn't — do.</p>
+      <div class="policy-meta">
+        <div class="meta-row"><span class="meta-label">Extension</span><span class="meta-val">Cookie Nuker v1.0.0</span></div>
+        <div class="meta-row"><span class="meta-label">Effective</span><span class="meta-val">2025</span></div>
+        <div class="meta-row"><span class="meta-label">Developer</span><span class="meta-val">CORE10</span></div>
+        <div class="meta-row"><span class="meta-label">Last Updated</span><span class="meta-val">2025</span></div>
+      </div>
+    </div>
+    <div class="policy-hero-right">
+      <div class="section-eyebrow">The short version</div>
+      <div class="section-title" style="margin-bottom:20px;">Simple.<br><span>No surprises.</span></div>
+      <p style="font-size:15px;color:var(--text-mid);line-height:1.75;">Cookie Nuker does not collect anything. It operates entirely inside your browser. Nothing ever leaves your device.</p>
+    </div>
+  </div>
+
+  <!-- TLDR -->
+  <section class="tldr-section">
+    <div class="tldr-header">
+      <div class="section-eyebrow">TL;DR</div>
+      <div class="section-title">The Short Version</div>
+    </div>
+    <div class="tldr-grid">
+      <div class="tldr-card yes">
+        <div class="tldr-icon">✓</div>
+        <div class="tldr-text">Works entirely inside your browser — nothing sent out</div>
+      </div>
+      <div class="tldr-card yes">
+        <div class="tldr-icon">✓</div>
+        <div class="tldr-text">No accounts, no sign-ups required</div>
+      </div>
+      <div class="tldr-card yes">
+        <div class="tldr-icon">✓</div>
+        <div class="tldr-text">Open-source — inspect the code yourself</div>
+      </div>
+      <div class="tldr-card yes">
+        <div class="tldr-icon">✓</div>
+        <div class="tldr-text">No data ever leaves your device</div>
+      </div>
+      <div class="tldr-card no">
+        <div class="tldr-icon">✗</div>
+        <div class="tldr-text">Does NOT collect personal data of any kind</div>
+      </div>
+      <div class="tldr-card no">
+        <div class="tldr-icon">✗</div>
+        <div class="tldr-text">Does NOT send data to any server</div>
+      </div>
+      <div class="tldr-card no">
+        <div class="tldr-icon">✗</div>
+        <div class="tldr-text">Does NOT track your browsing habits</div>
+      </div>
+      <div class="tldr-card no">
+        <div class="tldr-icon">✗</div>
+        <div class="tldr-text">Does NOT include analytics or telemetry</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLICY BODY -->
+  <div class="policy-layout">
+
+    <div class="policy-sidebar">
+      <div class="sidebar-label">Contents</div>
+      <ul class="sidebar-nav">
+        <li><a href="#overview">§ Overview</a></li>
+        <li><a href="#data-collection">§ Data Collection</a></li>
+        <li><a href="#how-it-works">§ How It Works</a></li>
+        <li><a href="#permissions">§ Permissions Explained</a></li>
+        <li><a href="#third-party">§ Third-Party Services</a></li>
+        <li><a href="#data-storage">§ Local Storage by Extension</a></li>
+        <li><a href="#children">§ Children's Privacy</a></li>
+        <li><a href="#changes">§ Changes to This Policy</a></li>
+        <li><a href="#open-source">§ Open Source &amp; Transparency</a></li>
+        <li><a href="#contact">§ Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="policy-content">
+
+      <div class="policy-section" id="overview">
+        <h2 data-n="§01">Overview</h2>
+        <p>This Privacy Policy describes how the <strong>Cookie Nuker</strong> Chrome browser extension ("Extension"), developed by <strong>CORE10</strong> ("we", "us", "our"), handles information when you install and use it.</p>
+        <p>Cookie Nuker is a browser utility tool. It performs all operations locally within your browser. It does not operate as a web service, does not communicate with any external servers, and does not collect, transmit, or store any information about you or your browsing activity.</p>
+      </div>
+
+      <div class="policy-section" id="data-collection">
+        <h2 data-n="§02">Data Collection</h2>
+        <p><strong>Cookie Nuker does not collect any data.</strong> Specifically, the extension does not collect:</p>
+        <ul class="do-list">
+          <li class="no"><span class="marker">✗</span><span class="txt"><strong>Personal information</strong> — no names, emails, identifiers, or account details</span></li>
+          <li class="no"><span class="marker">✗</span><span class="txt"><strong>Browsing history</strong> — no record of websites you visit</span></li>
+          <li class="no"><span class="marker">✗</span><span class="txt"><strong>Usage data or analytics</strong> — no tracking of when or how you use the extension</span></li>
+          <li class="no"><span class="marker">✗</span><span class="txt"><strong>Cleared storage contents</strong> — the data being cleared is never read or stored by us</span></li>
+          <li class="no"><span class="marker">✗</span><span class="txt"><strong>Device information</strong> — no hardware, OS, or browser fingerprinting</span></li>
+          <li class="no"><span class="marker">✗</span><span class="txt"><strong>Crash or error reports</strong> — no telemetry is sent anywhere</span></li>
+        </ul>
+      </div>
+
+      <div class="policy-section" id="how-it-works">
+        <h2 data-n="§03">How the Extension Works</h2>
+        <p>Cookie Nuker operates <strong>entirely within your local browser environment</strong>. When you click the "Nuke Everything" button, the extension:</p>
+        <ul class="do-list">
+          <li class="yes"><span class="marker">✓</span><span class="txt">Reads the <strong>URL of your currently active tab</strong> to determine which site's storage to clear (this URL is never transmitted anywhere)</span></li>
+          <li class="yes"><span class="marker">✓</span><span class="txt">Calls <strong>Chrome's built-in APIs</strong> (cookies, browsingData, scripting) to delete storage data locally</span></li>
+          <li class="yes"><span class="marker">✓</span><span class="txt">Injects a <strong>cleanup script</strong> into the active tab's page context to access page-level storage objects</span></li>
+          <li class="yes"><span class="marker">✓</span><span class="txt">Returns a <strong>local results report</strong> to the popup UI — this report exists only in memory and is discarded when the popup closes</span></li>
+        </ul>
+        <p>No information from any of these operations is written to disk, sent to any server, or persisted beyond your active browser session.</p>
+      </div>
+
+      <div class="policy-section" id="permissions">
+        <h2 data-n="§04">Permissions Explained</h2>
+        <p>Cookie Nuker requests the following Chrome permissions. Each is necessary for the extension to function and is used solely for the purpose described:</p>
+        <table class="perm-table">
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Why It's Needed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="perm-name">tabs</td><td class="perm-desc">Read the active tab's URL so the extension knows which site's storage to target. Never used to access other tabs.</td></tr>
+            <tr><td class="perm-name">cookies</td><td class="perm-desc">Required to read and delete cookies via Chrome's cookies API for the active site only.</td></tr>
+            <tr><td class="perm-name">browsingData</td><td class="perm-desc">Allows clearing of storage buckets, HTTP cache, IndexedDB, and WebSQL through Chrome's official clearing API.</td></tr>
+            <tr><td class="perm-name">scripting</td><td class="perm-desc">Injects a cleanup script into the active tab to clear localStorage, sessionStorage, Cache Storage, and Service Workers from within the page context.</td></tr>
+            <tr><td class="perm-name">activeTab</td><td class="perm-desc">Grants temporary permission to interact with the tab you're currently viewing. Does not grant access to other tabs.</td></tr>
+            <tr><td class="perm-name">storage</td><td class="perm-desc">Reserved for potential future extension settings. Not actively used in v1.0.0.</td></tr>
+            <tr><td class="perm-name">debugger</td><td class="perm-desc">Reserved for potential advanced debugging features. Not actively used in v1.0.0.</td></tr>
+            <tr><td class="perm-name">&lt;all_urls&gt;</td><td class="perm-desc">Chrome requires explicit host permissions to clear storage for any given site. This permission covers all sites but the extension only operates on the single active tab you explicitly choose to nuke.</td></tr>
+          </tbody>
+        </table>
+        <p>The <code>&lt;all_urls&gt;</code> permission may appear broad, but Cookie Nuker <strong>only ever acts on the one tab you have open and choose to nuke</strong>. It does not passively monitor, read, or interact with any other tabs or websites.</p>
+      </div>
+
+      <div class="policy-section" id="third-party">
+        <h2 data-n="§05">Third-Party Services</h2>
+        <p>Cookie Nuker <strong>does not use any third-party services</strong>, analytics platforms, advertising networks, crash reporting tools, or tracking libraries. The extension contains no external scripts or network requests of any kind.</p>
+        <p>The extension's source code is available for inspection. There are no hidden dependencies, no obfuscated code that calls home, and no bundled trackers.</p>
+      </div>
+
+      <div class="policy-section" id="data-storage">
+        <h2 data-n="§06">Local Storage by the Extension Itself</h2>
+        <p>Cookie Nuker may save minimal user preferences (such as the Auto-Reload toggle state) locally using Chrome's built-in <code>chrome.storage</code> API. This data:</p>
+        <ul class="do-list">
+          <li class="yes"><span class="marker">✓</span><span class="txt">Is stored <strong>only on your device</strong>, never on any server</span></li>
+          <li class="yes"><span class="marker">✓</span><span class="txt">Contains only <strong>UI preference flags</strong> (true/false values), never personal data</span></li>
+          <li class="yes"><span class="marker">✓</span><span class="txt">Can be cleared by removing the extension from Chrome</span></li>
+        </ul>
+      </div>
+
+      <div class="policy-section" id="children">
+        <h2 data-n="§07">Children's Privacy</h2>
+        <p>Cookie Nuker is a developer/privacy utility tool not directed at children. We do not knowingly collect information from anyone, including children under the age of 13. Since the extension collects no information from any user whatsoever, this is not a practical concern.</p>
+      </div>
+
+      <div class="policy-section" id="changes">
+        <h2 data-n="§08">Changes to This Policy</h2>
+        <p>If we make material changes to this Privacy Policy — for example, if a future version of Cookie Nuker introduces new functionality that involves data handling — we will update this page and revise the "Last Updated" date at the top.</p>
+        <p>We encourage you to review this page periodically. Continued use of the extension after changes constitutes acceptance of the updated policy.</p>
+        <p>For significant changes, we will also note them in the extension's changelog and on the Chrome Web Store listing.</p>
+      </div>
+
+      <div class="policy-section" id="open-source">
+        <h2 data-n="§09">Open Source &amp; Transparency</h2>
+        <p>Cookie Nuker is released under the <strong>MIT License</strong>. The full source code is publicly available and can be inspected to verify every claim made in this Privacy Policy. We believe in radical transparency — if you have any doubts about what the extension does, reading the source is the definitive answer.</p>
+        <p>Issues, questions, and contributions are managed through our public GitHub repository.</p>
+      </div>
+
+      <div class="policy-section" id="contact">
+        <h2 data-n="§10">Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, the extension's behavior, or want to report a bug or vulnerability, please reach out through any of the following channels:</p>
+        <div class="contact-card">
+          <div class="contact-row">
+            <span class="contact-label">Developer</span>
+            <span class="contact-val">CORE10</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Main Site</span>
+            <span class="contact-val"><a href="https://core10.site/" target="_blank" rel="noopener">https://core10.site/</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <span class="contact-val"><a href="mailto:coreten.official@gmail.com">coreten.official@gmail.com</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Bug Reports</span>
+            <span class="contact-val"><a href="https://github.com/coretenofficial-debug/cookie-nuker-issues/issues" target="_blank" rel="noopener">GitHub Issues</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-val"><a href="https://www.linkedin.com/company/core10x10/" target="_blank" rel="noopener">linkedin.com/company/core10x10</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Facebook</span>
+            <span class="contact-val"><a href="https://www.facebook.com/profile.php?id=61588830811804" target="_blank" rel="noopener">facebook.com/CORE10</a></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-mid">
+      <div>
+        <a class="footer-logo" href="cookie_nuker.html">COOKIE NUKER</a>
+        <div class="footer-by">by <a href="https://core10.site/" target="_blank" rel="noopener">CORE10</a> &nbsp;·&nbsp; MIT License</div>
+      </div>
+      <div class="footer-socials">
+        <a class="social-link" href="https://www.linkedin.com/company/core10x10/" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=61588830811804" target="_blank" rel="noopener" title="Facebook">f</a>
+        <a class="social-link" href="mailto:coreten.official@gmail.com" title="Email">@</a>
+        <a class="social-link" href="https://github.com/coretenofficial-debug/cookie-nuker-issues/issues" target="_blank" rel="noopener" title="Report Bug">⌥</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <a href="https://core10.site/" target="_blank" rel="noopener">CORE10</a> &nbsp;·&nbsp; Cookie Nuker v1.0.0</p>
+      <p><a href="cookie_nuker.html">← Home</a> &nbsp;·&nbsp; <a href="mailto:coreten.official@gmail.com">coreten.official@gmail.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Nuker — Nuke All Browser Storage in One Click</title>
+  <meta name="description" content="Cookie Nuker: One-click obliteration of ALL browser storage. Built for developers, QA testers, and privacy-focused users. Free Chrome Extension by CORE10." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #e02020;
+      --red-light: #fef2f2;
+      --red-mid: #fecaca;
+      --red-border: #f87171;
+      --green: #16a34a;
+      --green-light: #f0fdf4;
+      --green-border: #86efac;
+      --bg: #ffffff;
+      --bg2: #f8f8f8;
+      --bg3: #f1f1f1;
+      --border: #1a1a1a;
+      --border-light: #d4d4d4;
+      --text: #0f0f0f;
+      --text-mid: #404040;
+      --text-dim: #737373;
+      --accent: #e02020;
+      --mono: 'DM Mono', monospace;
+      --display: 'Syne', sans-serif;
+      --body: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announce-bar {
+      background: var(--text);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      padding: 9px 0;
+      text-align: center;
+    }
+    .announce-bar a { color: var(--red-mid); text-decoration: none; font-weight: 500; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--border);
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo-pill {
+      background: var(--red);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border: 2px solid var(--text);
+    }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: var(--text-mid);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta {
+      background: var(--text) !important;
+      color: #fff !important;
+      padding: 9px 20px;
+      font-family: var(--mono) !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.5px;
+      border: 2px solid var(--text);
+      transition: background .15s, color .15s !important;
+    }
+    .nav-cta:hover { background: var(--red) !important; border-color: var(--red) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+    }
+    .hero-left {
+      padding: 80px 5vw 80px 6vw;
+      border-right: 2px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--red); }
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(40px, 6vw, 76px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -2px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    h1 .nuke {
+      color: var(--red);
+      display: block;
+    }
+    .hero-tagline {
+      font-size: 16px;
+      color: var(--text-mid);
+      margin: 28px 0 16px;
+      max-width: 420px;
+      line-height: 1.65;
+    }
+
+    /* WHO IT'S FOR — inline badges */
+    .for-whom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0 36px;
+    }
+    .for-badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      padding: 6px 14px;
+      border: 2px solid var(--border);
+      color: var(--text);
+      background: var(--bg);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .for-badge.active {
+      background: var(--text);
+      color: #fff;
+    }
+    .hero-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      text-decoration: none;
+      border: 2px solid var(--red);
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .hero-cta:hover { background: var(--text); border-color: var(--text); }
+    .hero-cta-ghost {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-mid);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 2px;
+      transition: color .15s;
+    }
+    .hero-cta-ghost:hover { color: var(--red); border-color: var(--red); }
+    .hero-sub {
+      margin-top: 20px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-sub span::before { content: '✓ '; color: var(--green); }
+
+    /* HERO RIGHT — mockup */
+    .hero-right {
+      padding: 60px 6vw 60px 5vw;
+      background: var(--bg2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 92vh;
+    }
+    .ext-mockup-wrap {
+      width: 100%;
+      max-width: 340px;
+      border: 2px solid var(--border);
+      background: var(--bg);
+      box-shadow: 8px 8px 0 var(--border);
+    }
+    .ext-titlebar {
+      background: var(--bg3);
+      border-bottom: 2px solid var(--border);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot { width: 11px; height: 11px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.2); }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #ffbd2e; }
+    .dot-g { background: #28c840; }
+    .ext-titlebar-label { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-left: 6px; }
+    .ext-body { padding: 20px 18px; font-family: var(--mono); }
+    .ext-url-bar {
+      background: var(--bg2);
+      border: 1.5px solid var(--border-light);
+      padding: 7px 12px;
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .dot-https { width: 7px; height: 7px; border-radius: 50%; background: var(--green); display: inline-block; flex-shrink: 0; }
+    .ext-head-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .ext-title { font-family: var(--display); font-size: 18px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+    .ext-ver { font-size: 10px; color: var(--text-dim); }
+    .checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 16px; }
+    .check-item {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--bg2); border: 1.5px solid var(--border-light);
+      padding: 6px 9px; font-size: 11px; color: var(--text-mid);
+    }
+    .check-box {
+      width: 13px; height: 13px;
+      border: 1.5px solid var(--border);
+      background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 8px; color: #fff; flex-shrink: 0;
+    }
+    .nuke-btn {
+      width: 100%; background: var(--red); color: #fff;
+      font-family: var(--display); font-size: 14px; font-weight: 800;
+      letter-spacing: 0.5px; padding: 13px;
+      border: 2px solid var(--border); cursor: pointer; text-align: center;
+    }
+    .results-row { margin-top: 12px; display: flex; flex-direction: column; gap: 3px; }
+    .result-item {
+      display: flex; justify-content: space-between;
+      font-size: 10px; padding: 4px 0;
+      border-bottom: 1px solid var(--bg3);
+    }
+    .r-cleared { color: var(--green); font-weight: 500; }
+    .r-na { color: var(--text-dim); }
+
+    /* ── WHY SECTION ── */
+    .why-section {
+      border-bottom: 2px solid var(--border);
+    }
+    .why-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 2px solid var(--border);
+    }
+    .why-header-cell {
+      padding: 52px 6vw;
+    }
+    .why-header-cell:first-child { border-right: 2px solid var(--border); }
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-eyebrow::before { content: ''; display: inline-block; width: 18px; height: 2px; background: var(--red); }
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .section-title span { color: var(--red); }
+    .why-body { padding: 48px 6vw; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 2px solid var(--border);
+    }
+    .why-card {
+      padding: 36px 32px;
+      border-right: 2px solid var(--border);
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+    .why-card:nth-child(2n) { border-right: none; }
+    .why-card:nth-last-child(-n+2) { border-bottom: none; }
+    .why-card-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1.5px solid var(--border);
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--text-mid);
+    }
+    .why-card-tag.problem { border-color: var(--red-border); color: var(--red); background: var(--red-light); }
+    .why-card-tag.solution { border-color: #86efac; color: var(--green); background: var(--green-light); }
+    .why-card h3 {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .why-card p { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+    /* ── WHO IT'S FOR (full section) ── */
+    .audience-section {
+      border-bottom: 2px solid var(--border);
+    }
+    .audience-header {
+      padding: 52px 6vw 40px;
+      border-bottom: 2px solid var(--border);
+    }
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: none;
+    }
+    .audience-card {
+      padding: 40px 36px;
+      border-right: 2px solid var(--border);
+      position: relative;
+    }
+    .audience-card:last-child { border-right: none; }
+    .audience-num {
+      font-family: var(--mono);
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--bg3);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+    .audience-icon { font-size: 28px; margin-bottom: 14px; }
+    .audience-role {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .audience-desc {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .audience-scenario {
+      background: var(--bg2);
+      border: 1.5px solid var(--border-light);
+      padding: 12px 14px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .audience-scenario-label {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    /* ── VIDEO ── */
+    .video-section {
+      padding: 72px 6vw;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .video-header { text-align: center; }
+    .video-wrapper {
+      width: 100%;
+      max-width: 760px;
+      aspect-ratio: 16/9;
+      border: 2px solid var(--border);
+      background: var(--bg2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 6px 6px 0 var(--border);
+    }
+    .video-placeholder {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 14px;
+      color: var(--text-dim); font-family: var(--mono); font-size: 12px;
+    }
+    .play-btn {
+      width: 68px; height: 68px;
+      border: 2px solid var(--border);
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--red); font-size: 24px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .play-btn:hover { background: var(--red-light); }
+    .video-note { font-family: var(--mono); font-size: 11px; color: var(--text-dim); letter-spacing: 0.5px; }
+
+    /* ── FEATURES ── */
+    .features-section { border-bottom: 2px solid var(--border); }
+    .features-header {
+      padding: 52px 6vw 40px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .feature-card {
+      padding: 36px 32px;
+      border-right: 2px solid var(--border);
+      border-bottom: 2px solid var(--border);
+      transition: background .15s;
+    }
+    .feature-card:nth-child(3n) { border-right: none; }
+    .feature-card:nth-last-child(-n+3) { border-bottom: none; }
+    .feature-card:hover { background: var(--red-light); }
+    .feature-icon { font-size: 26px; margin-bottom: 16px; }
+    .feature-title {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+    }
+    .feature-desc { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+    /* ── WHAT GETS NUKED ── */
+    .nuked-section {
+      background: var(--text);
+      border-bottom: 2px solid var(--border);
+    }
+    .nuked-header {
+      padding: 52px 6vw 40px;
+      border-bottom: 2px solid rgba(255,255,255,0.12);
+    }
+    .nuked-header .section-eyebrow { color: var(--red-mid); }
+    .nuked-header .section-eyebrow::before { background: var(--red-mid); }
+    .nuked-header .section-title { color: #fff; }
+    .nuked-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .nuked-item {
+      padding: 24px 28px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .nuked-item:nth-child(4n) { border-right: none; }
+    .nuked-icon { color: var(--red-mid); font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+    .nuked-icon.na { color: rgba(255,255,255,0.2); }
+    .nuked-name { font-family: var(--mono); font-size: 12px; color: #fff; margin-bottom: 4px; }
+    .nuked-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+    /* ── USAGE ── */
+    .usage-section { border-bottom: 2px solid var(--border); }
+    .usage-header {
+      padding: 52px 6vw 40px;
+      border-bottom: 2px solid var(--border);
+    }
+    .usage-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .usage-step {
+      padding: 40px 32px;
+      border-right: 2px solid var(--border);
+    }
+    .usage-step:last-child { border-right: none; }
+    .step-num {
+      font-family: var(--mono);
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+    .step-title {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.2px;
+    }
+    .step-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+    .usage-cta {
+      padding: 52px 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: var(--bg2);
+      border-top: 2px solid var(--border);
+    }
+    .big-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      text-decoration: none;
+      border: 2px solid var(--red);
+      transition: background .15s, border-color .15s;
+    }
+    .big-cta:hover { background: var(--text); border-color: var(--text); }
+    .cta-sub { font-family: var(--mono); font-size: 11px; color: var(--text-dim); letter-spacing: 0.5px; }
+    .cta-sub span::before { content: '· '; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 2px solid var(--border);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+    }
+    .footer-brand {
+      padding: 52px 6vw 52px 6vw;
+      border-right: 2px solid var(--border);
+    }
+    .footer-logo {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 13px; color: var(--text-dim); line-height: 1.65; margin-bottom: 20px; max-width: 320px; }
+    .footer-by {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    .footer-by a { color: var(--text); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--border-light); }
+    .footer-by a:hover { color: var(--red); }
+    .footer-socials { display: flex; gap: 8px; }
+    .social-link {
+      width: 36px; height: 36px;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-mid); text-decoration: none; font-size: 13px; font-weight: 500;
+      transition: color .15s, background .15s, border-color .15s;
+    }
+    .social-link:hover { color: #fff; background: var(--text); border-color: var(--text); }
+    .footer-col { padding: 52px 4vw; border-right: 2px solid var(--border); }
+    .footer-col:last-child { border-right: none; }
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: var(--text-mid);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .footer-col ul li a:hover { color: var(--red); border-color: var(--red-mid); }
+    .footer-bottom {
+      padding: 20px 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); letter-spacing: 0.5px; }
+    .footer-bottom a { color: var(--text-dim); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--red); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { border-right: none; border-bottom: 2px solid var(--border); padding: 60px 6vw; }
+      .hero-right { min-height: auto; padding: 48px 6vw; }
+      .why-header { grid-template-columns: 1fr; }
+      .why-header-cell:first-child { border-right: none; border-bottom: 2px solid var(--border); }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-card { border-right: none; }
+      .why-card:nth-last-child(-n+2) { border-bottom: 2px solid var(--border); }
+      .why-card:last-child { border-bottom: none; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .audience-card { border-right: none; border-bottom: 2px solid var(--border); }
+      .audience-card:last-child { border-bottom: none; }
+      .features-header { flex-direction: column; align-items: flex-start; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .feature-card:nth-child(3n) { border-right: 2px solid var(--border); }
+      .feature-card:nth-child(2n) { border-right: none; }
+      .nuked-grid { grid-template-columns: repeat(2, 1fr); }
+      .nuked-item:nth-child(4n) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .nuked-item:nth-child(2n) { border-right: none; }
+      .usage-steps { grid-template-columns: 1fr 1fr; }
+      .usage-step:nth-child(2n) { border-right: none; }
+      .usage-step:nth-child(1), .usage-step:nth-child(2) { border-bottom: 2px solid var(--border); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: span 2; border-right: none; border-bottom: 2px solid var(--border); }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-card { border-right: none !important; }
+      .nuked-grid { grid-template-columns: 1fr; }
+      .nuked-item { border-right: none !important; }
+      .usage-steps { grid-template-columns: 1fr; }
+      .usage-step { border-right: none; border-bottom: 2px solid var(--border); }
+      .usage-step:last-child { border-bottom: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-col { border-right: none; border-bottom: 2px solid var(--border); }
+      .footer-brand { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCE BAR -->
+  <div class="announce-bar">
+    ☢ Cookie Nuker v1.0.0 is live on the Chrome Web Store &nbsp;·&nbsp; <a href="https://chrome.google.com/webstore" target="_blank" rel="noopener">Install free →</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">
+      COOKIE NUKER
+      <span class="nav-logo-pill">by CORE10</span>
+    </a>
+    <div class="nav-links">
+      <a href="#why">Why It Exists</a>
+      <a href="#who">Who It's For</a>
+      <a href="#features">Features</a>
+      <a href="#usage">How to Use</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="nav-cta" href="https://chrome.google.com/webstore" target="_blank" rel="noopener">Add to Chrome</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Free Chrome Extension</div>
+      <h1>Cookie<span class="nuke">Nuker.</span></h1>
+      <p class="hero-tagline">
+        Clearing cookies alone isn't enough. Websites silently persist your session, preferences, and tracking data across <strong>11 different storage types</strong>. Cookie Nuker obliterates all of them in one click.
+      </p>
+
+      <div class="for-whom">
+        <span class="for-badge active">Developers</span>
+        <span class="for-badge">QA Testers</span>
+        <span class="for-badge">Privacy Users</span>
+        <span class="for-badge">Security Researchers</span>
+      </div>
+
+      <div class="hero-cta-row">
+        <a class="hero-cta" href="https://chrome.google.com/webstore" target="_blank" rel="noopener">☢ Install Free</a>
+        <a class="hero-cta-ghost" href="#why">Why not just clear cookies? →</a>
+      </div>
+      <div class="hero-sub">
+        <span>MIT License</span>
+        <span>No sign-up</span>
+        <span>No tracking</span>
+        <span>100% local</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="ext-mockup-wrap">
+        <div class="ext-titlebar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="ext-titlebar-label">Cookie Nuker — Extension Popup</span>
+        </div>
+        <div class="ext-body">
+          <div class="ext-url-bar">
+            <span class="dot-https"></span>
+            <span>github.com</span>
+          </div>
+          <div class="ext-head-row">
+            <div class="ext-title">Cookie Nuker</div>
+            <div class="ext-ver">v1.0.0</div>
+          </div>
+          <div class="checklist">
+            <div class="check-item"><div class="check-box">✓</div> Cookies</div>
+            <div class="check-item"><div class="check-box">✓</div> LocalStorage</div>
+            <div class="check-item"><div class="check-box">✓</div> IndexedDB</div>
+            <div class="check-item"><div class="check-box">✓</div> Cache</div>
+            <div class="check-item"><div class="check-box">✓</div> Service Workers</div>
+            <div class="check-item"><div class="check-box">✓</div> WebSQL</div>
+          </div>
+          <div class="nuke-btn">☢ NUKE EVERYTHING</div>
+          <div class="results-row">
+            <div class="result-item"><span>Cookies</span><span class="r-cleared">● CLEARED</span></div>
+            <div class="result-item"><span>Local Storage</span><span class="r-cleared">● CLEARED</span></div>
+            <div class="result-item"><span>IndexedDB</span><span class="r-cleared">● CLEARED</span></div>
+            <div class="result-item"><span>Trust Tokens</span><span class="r-na">○ N/A</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SECTION -->
+  <section class="why-section" id="why">
+    <div class="why-header">
+      <div class="why-header-cell">
+        <div class="section-eyebrow">The Problem</div>
+        <div class="section-title">Why "Clear Cookies"<br><span>Isn't Enough</span></div>
+      </div>
+      <div class="why-header-cell">
+        <p style="font-size:15px; color:var(--text-mid); line-height:1.75; margin-bottom:16px;">
+          When you clear cookies from the browser settings — or even right-click Inspect → Application → Clear — you're often only removing one layer of a website's data footprint.
+        </p>
+        <p style="font-size:15px; color:var(--text-mid); line-height:1.75;">
+          Modern websites use <strong style="color:var(--text);">up to 11 different storage mechanisms</strong>. Cookies are just one. Service workers, IndexedDB, Cache Storage, and Shared Storage can all survive a standard cookie clear — leaving your session, preferences, or tracking identifiers intact.
+        </p>
+      </div>
+    </div>
+    <div class="why-body">
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-card-tag problem">Problem</div>
+          <h3>Cookie clear ≠ full reset</h3>
+          <p>Service workers can keep serving stale cached content. IndexedDB databases keep user data. LocalStorage survives cookie deletion. Sites can reconstruct your identity from these leftovers.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-tag problem">Problem</div>
+          <h3>Testing flows stay "logged in"</h3>
+          <p>Developers and QA engineers run the same onboarding or checkout flow dozens of times. A partial clear means you keep hitting already-seen states — wasting time re-clearing per API until every storage type is truly empty.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-tag solution">Solution</div>
+          <h3>Double-clear method</h3>
+          <p>Cookie Nuker combines Chrome's BrowsingData API with script injection into the active tab — two independent passes — so nothing survives. Not even the obscure ones.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-tag solution">Solution</div>
+          <h3>One click, 11 storage types</h3>
+          <p>Select what you want cleared, hit Nuke, and watch the real-time results log confirm each storage type was wiped. Auto-reload gives you a verified fresh slate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="audience-section" id="who">
+    <div class="audience-header">
+      <div class="section-eyebrow">Who It's For</div>
+      <div class="section-title">Built for Three Types<br><span>of People</span></div>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-num">01</div>
+        <div class="audience-icon">💻</div>
+        <div class="audience-role">Web Developers</div>
+        <p class="audience-desc">
+          You're building and testing features that depend on a clean browser state — first-time UX, login flows, onboarding wizards. Standard DevTools clears are slow and incomplete. Cookie Nuker gives you a verified full reset in under a second.
+        </p>
+        <div class="audience-scenario">
+          <div class="audience-scenario-label">Typical Scenario</div>
+          Testing a "first visit" modal that only appears to new users, but it keeps not showing because a service worker flag survives every cookie clear.
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-num">02</div>
+        <div class="audience-icon">🔬</div>
+        <div class="audience-role">QA / Automation Engineers</div>
+        <p class="audience-desc">
+          You need to reproduce bugs that only happen on fresh sessions, verify regression fixes, or manually test multi-step flows from scratch. One extension click replaces four DevTools panel actions — and actually works.
+        </p>
+        <div class="audience-scenario">
+          <div class="audience-scenario-label">Typical Scenario</div>
+          Verifying a checkout flow bug that only reproduces on the very first visit — previously requiring an incognito window or a full profile wipe just to reproduce it reliably.
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-num">03</div>
+        <div class="audience-icon">🔒</div>
+        <div class="audience-role">Privacy-Conscious Users</div>
+        <p class="audience-desc">
+          You know that clearing browser cookies from settings doesn't actually remove you from a site. Trackers use LocalStorage, IndexedDB, and Cache Storage as cookie-less fallbacks. Cookie Nuker clears all of them.
+        </p>
+        <div class="audience-scenario">
+          <div class="audience-scenario-label">Typical Scenario</div>
+          You cleared cookies before visiting a news site, but it still remembered your reading history — because it was stored in LocalStorage, not cookies.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="video-section" id="demo">
+    <div class="video-header">
+      <div class="section-eyebrow" style="justify-content:center;">See It In Action</div>
+      <div class="section-title" style="text-align:center;">Install. Use. <span>Done.</span></div>
+    </div>
+    <div class="video-wrapper">
+      <!--
+        REPLACE WITH ACTUAL VIDEO:
+        Option A — YouTube: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_ID" frameborder="0" allowfullscreen></iframe>
+        Option B — local:   <video controls width="100%" height="100%" poster="thumb.jpg"><source src="demo.mp4" type="video/mp4"></video>
+      -->
+      <div class="video-placeholder">
+        <div class="play-btn">▶</div>
+        <span>Demo video — coming soon</span>
+        <span style="font-size:10px; opacity:.5;">Replace this placeholder with a YouTube embed or hosted video</span>
+      </div>
+    </div>
+    <p class="video-note">Install → Click the icon → Hit NUKE → Done. That's it.</p>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="features-header">
+      <div>
+        <div class="section-eyebrow">Features</div>
+        <div class="section-title">Built Different.<br><span>Zero Compromise.</span></div>
+      </div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎛️</div>
+        <div class="feature-title">Selective Control</div>
+        <p class="feature-desc">Toggle individual storage types on or off before nuking. You're always in charge of exactly what gets cleared.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Real-Time Dashboard</div>
+        <p class="feature-desc">Color-coded per-item status indicators and a live destruction log show exactly what happened — success, failure, or N/A.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <div class="feature-title">Auto-Reload</div>
+        <p class="feature-desc">Optionally reloads the page post-nuke with cache bypass, so you always get a completely fresh state.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-title">URL Awareness</div>
+        <p class="feature-desc">Shows the active tab's hostname with a protocol indicator (HTTPS/HTTP) before you nuke — no accidental clears.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💣</div>
+        <div class="feature-title">Double-Clear Method</div>
+        <p class="feature-desc">Combines script injection and the BrowsingData API for complete obliteration — no sneaky storage survives.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <div class="feature-title">Clean, Modern UI</div>
+        <p class="feature-desc">Sharp, readable interface that stays out of your way. Clear status labels, no clutter, no confusion about what's happening.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT GETS NUKED -->
+  <section class="nuked-section" id="what-gets-nuked">
+    <div class="nuked-header">
+      <div class="section-eyebrow">Storage Destruction List</div>
+      <div class="section-title">What Gets <span style="color: var(--red-mid);">Obliterated</span></div>
+    </div>
+    <div class="nuked-grid">
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">Cookies</div><div class="nuked-desc">Including HttpOnly &amp; Secure flags</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">Local Storage</div><div class="nuked-desc">Origin-scoped key-value pairs</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">Session Storage</div><div class="nuked-desc">Tab-scoped storage</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">IndexedDB</div><div class="nuked-desc">Client-side structured databases</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">Cache Storage</div><div class="nuked-desc">HTTP response cache</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">Service Workers</div><div class="nuked-desc">Unregistered &amp; cleared</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">HTTP Cache</div><div class="nuked-desc">Browser-level disk cache</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">Shared Storage</div><div class="nuked-desc">Chrome 104+ cross-site storage</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">BF Cache</div><div class="nuked-desc">Back/Forward page cache</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">Storage Buckets</div><div class="nuked-desc">Storage API buckets</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon">✕</div><div><div class="nuked-name">WebSQL</div><div class="nuked-desc">Legacy SQL database</div></div></div>
+      <div class="nuked-item"><div class="nuked-icon na">○</div><div><div class="nuked-name" style="color:rgba(255,255,255,0.35);">Trust Tokens</div><div class="nuked-desc">Browser-managed, cannot be cleared</div></div></div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="usage-section" id="usage">
+    <div class="usage-header">
+      <div class="section-eyebrow">How It Works</div>
+      <div class="section-title">Four Steps.<br><span>Thirty Seconds.</span></div>
+    </div>
+    <div class="usage-steps">
+      <div class="usage-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Add to Chrome</div>
+        <p class="step-desc">Visit the Chrome Web Store and click "Add to Chrome". Enable Developer Mode at <code style="font-family:var(--mono);font-size:12px;color:var(--red);">chrome://extensions/</code> and load unpacked if installing from source.</p>
+      </div>
+      <div class="usage-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Navigate to any website</div>
+        <p class="step-desc">Go to the site you want to clear storage for. Cookie Nuker only acts on the active tab you're currently viewing.</p>
+      </div>
+      <div class="usage-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Click the 💀 icon</div>
+        <p class="step-desc">Open the extension from Chrome's toolbar. Review the URL shown to confirm you're on the right site before proceeding.</p>
+      </div>
+      <div class="usage-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Hit ☢ NUKE EVERYTHING</div>
+        <p class="step-desc">One click. Watch the real-time results log as every storage type gets wiped. The page auto-reloads with a verified fresh state.</p>
+      </div>
+    </div>
+    <div class="usage-cta">
+      <div>
+        <a class="big-cta" href="https://chrome.google.com/webstore" target="_blank" rel="noopener">☢ Get Cookie Nuker — Free</a>
+      </div>
+      <div class="cta-sub">
+        MIT License<span>No sign-up</span><span>No tracking</span><span>100% local</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="footer-logo" href="#">COOKIE NUKER</a>
+        <p>One-click obliteration of all browser storage. Built for developers, QA testers, and privacy-conscious users.</p>
+        <div class="footer-by">
+          A tool by <a href="https://core10.site/" target="_blank" rel="noopener">CORE10</a> &nbsp;·&nbsp; MIT License
+        </div>
+        <div class="footer-socials">
+          <a class="social-link" href="https://www.linkedin.com/company/core10x10/" target="_blank" rel="noopener" title="LinkedIn">in</a>
+          <a class="social-link" href="https://www.facebook.com/profile.php?id=61588830811804" target="_blank" rel="noopener" title="Facebook">f</a>
+          <a class="social-link" href="mailto:coreten.official@gmail.com" title="Email">@</a>
+          <a class="social-link" href="https://github.com/coretenofficial-debug/cookie-nuker-issues/issues" target="_blank" rel="noopener" title="GitHub Issues">⌥</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Extension</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#what-gets-nuked">What Gets Nuked</a></li>
+          <li><a href="#usage">How to Install</a></li>
+          <li><a href="https://chrome.google.com/webstore" target="_blank" rel="noopener">Chrome Web Store</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="https://github.com/coretenofficial-debug/cookie-nuker-issues/issues" target="_blank" rel="noopener">Report a Bug</a></li>
+          <li><a href="mailto:coreten.official@gmail.com">Email Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="https://core10.site/" target="_blank" rel="noopener">CORE10 Main Site</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <a href="https://core10.site/" target="_blank" rel="noopener">CORE10</a> &nbsp;·&nbsp; MIT License &nbsp;·&nbsp; Cookie Nuker v1.0.0</p>
+      <p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:coreten.official@gmail.com">coreten.official@gmail.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
