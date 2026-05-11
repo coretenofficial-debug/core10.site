@@ -91,17 +91,6 @@ a{text-decoration:none;color:inherit}
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='rgba(200,150,42,0.08)' stroke-width='0.4'%3E%3Cpolygon points='40,4 76,22 76,58 40,76 4,58 4,22'/%3E%3Cpolygon points='40,16 64,28 64,52 40,64 16,52 16,28'/%3E%3C/g%3E%3C/svg%3E");
   background-size:80px 80px;
 }
-
-/* ─── ANNOUNCE BAR ─── */
-.ann-bar{
-  position:relative;z-index:1000;
-  background:linear-gradient(90deg, #0a1f18 0%, #0d2a1e 50%, #0a1a14 100%);
-  color:#fff;
-  display:flex;align-items:center;justify-content:center;gap:14px;
-  padding:10px 48px 10px 24px;
-  font-size:12.5px;font-weight:500;letter-spacing:0.02em;
-  border-bottom:1px solid rgba(200,150,42,0.15);
-}
 .ann-moon{font-size:15px;animation:mf 3s ease-in-out infinite}
 @keyframes mf{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(8deg)}}
 .ann-pill{
@@ -121,17 +110,23 @@ a{text-decoration:none;color:inherit}
 
 /* ─── NAV ─── */
 nav{
-  position:fixed;top:calc(40px + 16px);left:50%;transform:translateX(-50%);
-  z-index:900;
-  display:flex;align-items:center;justify-content:space-between;gap:32px;
-  background:rgba(9,20,16,0.82);
-  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
-  border:1px solid rgba(200,150,42,0.18);
-  border-radius:100px;
-  padding:8px 8px 8px 22px;
-  width:min(980px,calc(100vw - 32px));
-  box-shadow:0 2px 40px rgba(0,0,0,0.35),0 0 0 1px rgba(200,150,42,0.05) inset;
-  transition:top .3s ease,background .3s;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    background: rgba(9, 20, 16, 0.82);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 2px solid rgba(200, 150, 42, 0.18);
+    border-radius: 100px;
+    padding: 8px 8px 8px 22px;
+    width: min(980px, calc(100vw - 32px));
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(200, 150, 42, 0.05) inset;
+    transition: top .3s ease, background .3s;
 }
 nav.bar-hidden{top:16px}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}
@@ -571,13 +566,6 @@ footer{
 </head>
 <body>
 
-<!-- ANNOUNCE BAR -->
-<div class="ann-bar" id="annBar">
-  <span class="ann-moon">🌙</span>
-  <span class="ann-pill">New</span>
-  <span class="ann-txt"><strong>Islamic Homepage v1.02</strong> is now live on the Chrome Web Store</span>
-  <button class="ann-close" onclick="this.closest('#annBar').style.display='none'" aria-label="Close">✕</button>
-</div>
 
 <!-- NAV -->
 <header>
