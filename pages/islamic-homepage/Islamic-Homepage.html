@@ -129,7 +129,7 @@ a{text-decoration:none;color:inherit}
      top: 16px;
      left: 50%;
      transform: translateX(-50%);
-     z-index: 1001;
+     z-index: 1200;
      display: flex;
      align-items: center;
      justify-content: space-between;
@@ -1004,16 +1004,14 @@ if(starsEl){
 }
 
   // Announce bar height adjustment for nav
-  function adjustNav(){
+  function adjustNav(gap=16){
     const bar=document.getElementById('annBar');
     const nav=document.getElementById('mainNav');
     if(!bar||!nav) return;
     const isClosed=document.documentElement.classList.contains('banner-closed');
     const hidden=bar.style.display==='none' || bar.offsetHeight===0;
     const showClosed=isClosed || hidden;
-    const gap=16;
     nav.style.top=showClosed?gap+'px':(bar.offsetHeight+gap)+'px';
-    window._barH=bar.offsetHeight;
   }
   adjustNav();
   window.addEventListener('resize',adjustNav);
@@ -1034,17 +1032,11 @@ if(starsEl){
    const y=window.scrollY;
    const nav=document.getElementById('mainNav');
    if(!nav) return;
-   const bar=document.getElementById('annBar');
-   const isClosed=document.documentElement.classList.contains('banner-closed');
-   const hidden=bar&&(bar.style.display==='none' || bar.offsetHeight===0);
-   const showBar=bar && !isClosed && !hidden;
-   const bh=showBar?bar.offsetHeight:0;
-   const gap=16;
    if(y>80){
-     nav.style.top=bh>0?bh+8+'px':'8px';
+     adjustNav(8);
      nav.style.background='rgba(6,12,10,0.92)';
    } else {
-     nav.style.top=bh>0?bh+gap+'px':gap+'px';
+     adjustNav(16);
      nav.style.background='rgba(9,20,16,0.82)';
    }
    lastY=y;

@@ -193,22 +193,22 @@ body{
     transform:translate(-2px,-2px);
   }
 
-  /* ─── NAV ─── */
-   nav{
-     position:fixed;
-     top:0;
-     left:50%;
-     transform:translateX(-50%);
-     z-index:1000;
-     display:flex;
-     align-items:center;
-     justify-content:space-between;
-     background:var(--bg);
-     border:var(--border-width) solid var(--border);
-     padding:2px 10px;
-     width:min(1000px,calc(100vw - 40px));
-     box-shadow:4px 4px 0 var(--ink);
-   }
+   /* ─── NAV ─── */
+    nav{
+      position:fixed;
+      top:0;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:1200;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:var(--bg);
+      border:var(--border-width) solid var(--border);
+      padding:2px 10px;
+      width:min(1000px,calc(100vw - 40px));
+      box-shadow:4px 4px 0 var(--ink);
+    }
   .nav-logo{
     font-family:var(--font-display);
     font-size:20px;
@@ -1277,17 +1277,16 @@ body{
 
  <!-- SCROLL REVEAL -->
  <script>
-   // Adjust navbar position based on announcement bar
-   function adjustNavIndex(){
-     const bar=document.getElementById('annBar');
-     const nav=document.querySelector('nav');
-     if(!bar||!nav) return;
-     const isClosed=document.documentElement.classList.contains('banner-closed');
-     const hidden=bar.style.display==='none' || bar.offsetHeight===0;
-     const showBar=!isClosed && !hidden;
-     const gap=16;
-     nav.style.top=showBar?(bar.offsetHeight+gap)+'px':gap+'px';
-   }
+    // Adjust navbar position based on announcement bar
+    function adjustNavIndex(gap=16){
+      const bar=document.getElementById('annBar');
+      const nav=document.querySelector('nav');
+      if(!bar||!nav) return;
+      const isClosed=document.documentElement.classList.contains('banner-closed');
+      const hidden=bar.style.display==='none' || bar.offsetHeight===0;
+      const showClosed=isClosed || hidden;
+      nav.style.top=showClosed?gap+'px':(bar.offsetHeight+gap)+'px';
+    }
    adjustNavIndex();
    window.addEventListener('resize',adjustNavIndex);
   // Scroll reveal
@@ -1354,17 +1353,11 @@ body{
      const currentScroll = window.pageYOffset;
      const nav = document.querySelector('nav');
      if (nav) {
-       const bar = document.getElementById('annBar');
-       const isClosed = document.documentElement.classList.contains('banner-closed');
-       const hidden = bar && (bar.style.display === 'none' || bar.offsetHeight === 0);
-       const showBar = bar && !isClosed && !hidden;
-       const gap = 16;
-       const bh = showBar ? bar.offsetHeight : 0;
        if (currentScroll > 100) {
-         nav.style.top = '8px';
+         adjustNavIndex(8);
          nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
        } else {
-         nav.style.top = bh > 0 ? (bh + gap) + 'px' : gap + 'px';
+         adjustNavIndex(16);
          nav.style.boxShadow = '4px 4px 0 var(--ink)';
        }
      }
